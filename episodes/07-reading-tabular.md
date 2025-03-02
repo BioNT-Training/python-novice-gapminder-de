@@ -380,7 +380,7 @@ What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.
 ## Solution
 
 We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
-the folder `thesis` using '../' and then into the folder `field_data` using 'field\_data/'. Then we can specify the filename \`microbes.csv.
+the folder `thesis` using '../' and then into the folder `field_data` using 'field\_data/'. Then we can specify the filename `microbes.csv`.
 The result is as follows:
 
 ```python
