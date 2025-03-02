@@ -1,33 +1,36 @@
 ---
-title: Plotting
+title: Plotten
 teaching: 15
 exercises: 15
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a time series plot showing a single data set.
-- Create a scatter plot showing relationship between two data sets.
+- Erstellt ein Zeitseriendiagramm mit einem einzelnen Datensatz.
+- Erstellt ein Streudiagramm, das die Beziehung zwischen zwei Datensätzen zeigt.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I plot my data?
-- How can I save my plot for publishing?
+- Wie kann ich meine Daten darstellen?
+- Wie kann ich meinen Plot für die Veröffentlichung speichern?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## [`matplotlib`](https://matplotlib.org/) is the most widely used scientific plotting library in Python.
+## [`matplotlib`](https://matplotlib.org/) ist die am weitesten verbreitete wissenschaftliche Plotting-Bibliothek in Python.
 
-- Commonly use a sub-library called [`matplotlib.pyplot`](https://matplotlib.org/stable/tutorials/introductory/pyplot.html).
-- The Jupyter Notebook will render plots inline by default.
+- Üblicherweise wird eine Unterbibliothek namens
+  [`matplotlib.pyplot`](https://matplotlib.org/stable/tutorials/introductory/pyplot.html)
+  verwendet.
+- Das Jupyter Notebook rendert Plots standardmäßig inline.
 
 ```python
 import matplotlib.pyplot as plt
 ```
 
-- Simple plots are then (fairly) simple to create.
+- Einfache Diagramme sind dann (relativ) einfach zu erstellen.
 
 ```python
 time = [0, 1, 2, 3]
@@ -38,35 +41,45 @@ plt.xlabel('Time (hr)')
 plt.ylabel('Position (km)')
 ```
 
-![](fig/9_simple_position_time_plot.svg){alt='A line chart showing time (hr) relative to position (km), using the values provided in the code block above. By default, the plotted line is blue against a white background, and the axes have been scaled automatically to fit the range of the input data.'}
+![](fig/9_simple_position_time_plot.svg){alt='Ein Liniendiagramm, das die Zeit (Std.)
+relativ zur Position (km) anzeigt, unter Verwendung der im obigen Codeblock angegebenen
+Werte. Standardmäßig ist die gezeichnete Linie blau vor weißem Hintergrund, und die
+Achsen wurden automatisch skaliert, um sie an den Bereich der Eingabedaten anzupassen.'}
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Display All Open Figures
+## Alle offenen Abbildungen anzeigen
 
-In our Jupyter Notebook example, running the cell should generate the figure directly below the code.
-The figure is also included in the Notebook document for future viewing.
-However, other Python environments like an interactive Python session started from a terminal
-or a Python script executed via the command line require an additional command to display the figure.
+In unserem Jupyter-Notebook-Beispiel sollte das Ausführen der Zelle die Abbildung direkt
+unterhalb des Codes erzeugen. Die Abbildung wird auch in das Notebook-Dokument
+aufgenommen und kann später betrachtet werden. Andere Python-Umgebungen wie eine
+interaktive Python-Sitzung, die von einem Terminal aus gestartet wird, oder ein
+Python-Skript, das über die Kommandozeile ausgeführt wird, erfordern jedoch einen
+zusätzlichen Befehl, um die Abbildung anzuzeigen.
 
-Instruct `matplotlib` to show a figure:
+Weist `matplotlib` an, eine Figur darzustellen:
 
 ```python
 plt.show()
 ```
 
-This command can also be used within a Notebook - for instance, to display multiple figures
-if several are created by a single cell.
+Dieser Befehl kann auch innerhalb eines Notizbuchs verwendet werden - zum Beispiel, um
+mehrere Zahlen anzuzeigen, wenn mehrere von einer einzigen Zelle erstellt wurden.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
+## Plotten von Daten direkt aus einem [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
 
-- We can also plot [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
-- Before plotting, we convert the column headings from a `string` to `integer` data type, since they represent numerical values,
-  using [str.replace()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html) to remove the `gpdPercap_`
-  prefix and then [astype(int)](https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html)
-  to convert the series of string values (`['1952', '1957', ..., '2007']`) to a series of integers: `[1925, 1957, ..., 2007]`.
+- Wir können auch [Pandas
+  dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)
+  plotten.
+- Vor dem Plotten konvertieren wir die Spaltenüberschriften von einem `string`-Datentyp
+  in `integer`, da sie numerische Werte darstellen, indem wir
+  [str.replace()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html)
+  verwenden, um das Präfix `gpdPercap_` zu entfernen, und dann
+  [astype(int)](https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html),
+  um die Reihe von String-Werten (`['1952', '1957', ..., '2007']`) in eine Reihe von
+  Ganzzahlen zu konvertieren: `[1925, 1957, ..., 2007]`.
 
 ```python
 import pandas as pd
@@ -88,23 +101,25 @@ data.columns = years.astype(int)
 data.loc['Australia'].plot()
 ```
 
-![](fig/9_gdp_australia.svg){alt='GDP plot for Australia'}
+![](fig/9_gdp_australia.svg){alt='BIP-Darstellung für Australien'}
 
-## Select and transform data, then plot it.
+## Wählen Sie Daten aus, transformieren Sie sie und stellen Sie sie dann dar.
 
-- By default, [`DataFrame.plot`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot) plots with the rows as the X axis.
-- We can transpose the data in order to plot multiple series.
+- Standardmäßig zeichnet
+  [`DataFrame.plot`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot)
+  mit den Zeilen als X-Achse.
+- Wir können die Daten transponieren, um mehrere Reihen zu zeichnen.
 
 ```python
 data.T.plot()
 plt.ylabel('GDP per capita')
 ```
 
-![](fig/9_gdp_australia_nz.svg){alt='GDP plot for Australia and New Zealand'}
+![](fig/9_gdp_australia_nz.svg){alt='BIP-Darstellung für Australien und Neuseeland'}
 
-## Many styles of plot are available.
+## Es stehen viele Darstellungsarten zur Verfügung.
 
-- For example, do a bar plot using a fancier style.
+- Erstellen Sie z. B. ein Balkendiagramm mit einem ausgefeilteren Stil.
 
 ```python
 plt.style.use('ggplot')
@@ -112,14 +127,16 @@ data.T.plot(kind='bar')
 plt.ylabel('GDP per capita')
 ```
 
-![](fig/9_gdp_bar.svg){alt='GDP barplot for Australia'}
+![](fig/9_gdp_bar.svg){alt='BIP-Balkenplot für Australien'}
 
-## Data can also be plotted by calling the `matplotlib` `plot` function directly.
+## Daten können auch durch direkten Aufruf der Funktion `matplotlib` `plot` geplottet werden.
 
-- The command is `plt.plot(x, y)`
-- The color and format of markers can also be specified as an additional optional argument e.g., `b-` is a blue line, `g--` is a green dashed line.
+- Der Befehl lautet `plt.plot(x, y)`
+- Die Farbe und das Format der Marker können auch als zusätzliches optionales Argument
+  angegeben werden, z.B. `b-` ist eine blaue Linie, `g--` ist eine grüne gestrichelte
+  Linie.
 
-## Get Australia data from dataframe
+## Holt Australien-Daten aus dem Datenrahmen
 
 ```python
 years = data.columns
@@ -128,9 +145,9 @@ gdp_australia = data.loc['Australia']
 plt.plot(years, gdp_australia, 'g--')
 ```
 
-![](fig/9_gdp_australia_formatted.svg){alt='GDP formatted plot for Australia'}
+![](fig/9_gdp_australia_formatted.svg){alt='BIP-formatierte Darstellung für Australien'}
 
-## Can plot many sets of data together.
+## Kann viele Datensätze zusammen darstellen.
 
 ```python
 # Select two countries' worth of data.
@@ -147,58 +164,61 @@ plt.xlabel('Year')
 plt.ylabel('GDP per capita ($)')
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Adding a Legend
+## Hinzufügen einer Legende
 
-Often when plotting multiple datasets on the same figure it is desirable to have
-a legend describing the data.
+Beim Plotten mehrerer Datensätze auf derselben Abbildung ist es oft wünschenswert, eine
+Legende zur Beschreibung der Daten zu haben.
 
-This can be done in `matplotlib` in two stages:
+Dies kann in `matplotlib` in zwei Stufen erfolgen:
 
-- Provide a label for each dataset in the figure:
+- Geben Sie eine Beschriftung für jeden Datensatz in der Abbildung an:
 
 ```python
 plt.plot(years, gdp_australia, label='Australia')
 plt.plot(years, gdp_nz, label='New Zealand')
 ```
 
-- Instruct `matplotlib` to create the legend.
+- Weist `matplotlib` an, die Legende zu erstellen.
 
 ```python
 plt.legend()
 ```
 
-By default matplotlib will attempt to place the legend in a suitable position. If you
-would rather specify a position this can be done with the `loc=` argument, e.g to place
-the legend in the upper left corner of the plot, specify `loc='upper left'`
+Standardmäßig versucht matplotlib, die Legende an einer geeigneten Stelle zu platzieren.
+Wenn Sie lieber eine Position angeben möchten, können Sie dies mit dem Argument `loc=`
+tun, z.B. um die Legende in der oberen linken Ecke des Plots zu platzieren, geben Sie
+`loc='upper left'` an
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-![](fig/9_gdp_australia_nz_formatted.svg){alt='GDP formatted plot for Australia and New Zealand'}
+![](fig/9_gdp_australia_nz_formatted.svg){alt='BIP-formatierte Darstellung für
+Australien und Neuseeland'}
 
-- Plot a scatter plot correlating the GDP of Australia and New Zealand
-- Use either `plt.scatter` or `DataFrame.plot.scatter`
+- Plotten eines Streudiagramms, das das BIP von Australien und Neuseeland in Beziehung
+  setzt
+- Verwenden Sie entweder `plt.scatter` oder `DataFrame.plot.scatter`
 
 ```python
 plt.scatter(gdp_australia, gdp_nz)
 ```
 
-![](fig/9_gdp_correlation_plt.svg){alt='GDP correlation using plt.scatter'}
+![](fig/9_gdp_correlation_plt.svg){alt='BIP-Korrelation mit plt.scatter'}
 
 ```python
 data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 ```
 
-![](fig/9_gdp_correlation_data.svg){alt='GDP correlation using data.T.plot.scatter'}
+![](fig/9_gdp_correlation_data.svg){alt='BIP-Korrelation mit data.T.plot.scatter'}
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Minima and Maxima
+## Minima und Maxima
 
-Fill in the blanks below to plot the minimum GDP per capita over time
-for all the countries in Europe.
-Modify it again to plot the maximum GDP per capita over time for Europe.
+Füllen Sie die folgenden Felder aus, um das minimale Pro-Kopf-BIP aller europäischen
+Länder im Zeitverlauf darzustellen. Ändern Sie das Diagramm erneut, um das maximale
+Pro-Kopf-BIP für Europa im Zeitverlauf darzustellen.
 
 ```python
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
@@ -208,9 +228,9 @@ plt.legend(loc='best')
 plt.xticks(rotation=90)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
@@ -220,7 +240,7 @@ plt.legend(loc='best')
 plt.xticks(rotation=90)
 ```
 
-![](fig/9_minima_maxima_solution.png){alt='Minima Maxima Solution'}
+![](fig/9_minima_maxima_solution.png){alt='Minima Maxima Lösung'}
 
 
 
@@ -228,34 +248,34 @@ plt.xticks(rotation=90)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Correlations
+## Korrelationen
 
-Modify the example in the notes to create a scatter plot showing
-the relationship between the minimum and maximum GDP per capita
-among the countries in Asia for each year in the data set.
-What relationship do you see (if any)?
+Ändern Sie das Beispiel in den Anmerkungen, um ein Streudiagramm zu erstellen, das die
+Beziehung zwischen dem minimalen und maximalen Pro-Kopf-BIP der asiatischen Länder für
+jedes Jahr im Datensatz zeigt. Welche Beziehung sehen Sie (wenn überhaupt)?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
 data_asia.describe().T.plot(kind='scatter', x='min', y='max')
 ```
 
-![](fig/9_correlations_solution1.svg){alt='Correlations Solution 1'}
+![](fig/9_correlations_solution1.svg){alt='Korrelationen Lösung 1'}
 
-No particular correlations can be seen between the minimum and maximum GDP values
-year on year. It seems the fortunes of asian countries do not rise and fall together.
+Es sind keine besonderen Korrelationen zwischen den Mindest- und Höchstwerten des BIP
+von Jahr zu Jahr zu erkennen. Es scheint, als ob die Geschicke der asiatischen Länder
+nicht gemeinsam steigen und fallen.
 
 
 :::::::::::::::::::::::::
 
-You might note that the variability in the maximum is much higher than
-that of the minimum.  Take a look at the maximum and the max indexes:
+Sie werden feststellen, dass die Variabilität des Maximums viel größer ist als die des
+Minimums. Schauen Sie sich die Indizes Maximum und Maximum an:
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
@@ -264,17 +284,17 @@ print(data_asia.idxmax())
 print(data_asia.idxmin())
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-![](fig/9_correlations_solution2.png){alt='Correlations Solution 2'}
+![](fig/9_correlations_solution2.png){alt='Korrelationen Lösung 2'}
 
-Seems the variability in this value is due to a sharp drop after 1972.
-Some geopolitics at play perhaps? Given the dominance of oil producing countries,
-maybe the Brent crude index would make an interesting comparison?
-Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied
-more notably.
+Es scheint, dass die Schwankungen in diesem Wert auf einen starken Rückgang nach 1972
+zurückzuführen sind. Vielleicht sind geopolitische Gründe im Spiel? Angesichts der
+Dominanz der Erdöl produzierenden Länder wäre vielleicht der Brent-Rohöl-Index ein
+interessanter Vergleich? Während Myanmar durchweg das niedrigste BIP aufweist, sind die
+Schwankungen bei der Nation mit dem höchsten BIP noch ausgeprägter.
 
 
 
@@ -282,13 +302,13 @@ more notably.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## More Correlations
+## Weitere Korrelationen
 
-This short program creates a plot showing
-the correlation between GDP and life expectancy for 2007,
-normalizing marker size by population:
+Dieses kurze Programm erstellt ein Diagramm, das die Korrelation zwischen dem BIP und
+der Lebenserwartung für das Jahr 2007 zeigt, wobei die Markergröße durch die Bevölkerung
+normalisiert wird:
 
 ```python
 data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
@@ -296,26 +316,26 @@ data_all.plot(kind='scatter', x='gdpPercap_2007', y='lifeExp_2007',
               s=data_all['pop_2007']/1e6)
 ```
 
-Using online help and other resources,
-explain what each argument to `plot` does.
+Erläutern Sie anhand der Online-Hilfe und anderer Quellen, was die einzelnen Argumente
+von `plot` bewirken.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ![](fig/9_more_correlations_solution.svg){alt='More Correlations Solution'}
 
-A good place to look is the documentation for the plot function -
+Eine gute Anlaufstelle ist die Dokumentation für die Plot-Funktion -
 help(data\_all.plot).
 
-kind - As seen already this determines the kind of plot to be drawn.
+kind - Wie bereits gesehen, bestimmt dies die Art der Darstellung, die gezeichnet werden
+soll.
 
-x and y - A column name or index that determines what data will be
-placed on the x and y axes of the plot
+x und y - Ein Spaltenname oder Index, der bestimmt, welche Daten auf der x- und y-Achse
+des Diagramms platziert werden sollen
 
-s - Details for this can be found in the documentation of plt.scatter.
-A single number or one value for each data point. Determines the size
-of the plotted points.
+s - Details dazu finden Sie in der Dokumentation von plt.scatter. Eine einzelne Zahl
+oder ein Wert für jeden Datenpunkt. Bestimmt die Größe der gezeichneten Punkte.
 
 
 
@@ -323,34 +343,35 @@ of the plotted points.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Saving your plot to a file
+## Speichern der Darstellung in einer Datei
 
-If you are satisfied with the plot you see you may want to save it to a file,
-perhaps to include it in a publication. There is a function in the
-matplotlib.pyplot module that accomplishes this:
-[savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
-Calling this function, e.g. with
+Wenn Sie mit der Darstellung zufrieden sind, möchten Sie sie vielleicht in einer Datei
+speichern, um sie in eine Veröffentlichung aufzunehmen. Im Modul matplotlib.pyplot gibt
+es eine Funktion, mit der dies möglich ist:
+[savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html). Der
+Aufruf dieser Funktion, z.B. mit
 
 ```python
 plt.savefig('my_figure.png')
 ```
 
-will save the current figure to the file `my_figure.png`. The file format
-will automatically be deduced from the file name extension (other formats
-are pdf, ps, eps and svg).
+speichert die aktuelle Abbildung in der Datei `my_figure.png`. Das Dateiformat wird
+automatisch aus der Dateinamenerweiterung abgeleitet (andere Formate sind pdf, ps, eps
+und svg).
 
-Note that functions in `plt` refer to a global figure variable
-and after a figure has been displayed to the screen (e.g. with `plt.show`)
-matplotlib will make this  variable refer to a new empty figure.
-Therefore, make sure you call `plt.savefig` before the plot is displayed to
-the screen, otherwise you may find a file with an empty plot.
+Beachten Sie, dass die Funktionen in `plt` auf eine globale Figurvariable verweisen.
+Nachdem eine Figur auf dem Bildschirm angezeigt wurde (z.B. mit `plt.show`), wird
+matplotlib diese Variable auf eine neue leere Figur verweisen lassen. Stellen Sie daher
+sicher, dass Sie `plt.savefig` aufrufen, bevor der Plot auf dem Bildschirm angezeigt
+wird, sonst könnten Sie eine Datei mit einem leeren Plot vorfinden.
 
-When using dataframes, data is often generated and plotted to screen in one line.
-In addition to using `plt.savefig`, we can save a reference to the current figure
-in a local variable (with `plt.gcf`) and call the `savefig` class method from
-that variable to save the figure to file.
+Bei der Verwendung von Datenrahmen werden die Daten oft in einer einzigen Zeile erzeugt
+und auf dem Bildschirm dargestellt. Zusätzlich zur Verwendung von `plt.savefig` können
+wir einen Verweis auf die aktuelle Abbildung in einer lokalen Variablen (mit `plt.gcf`)
+speichern und die Klassenmethode `savefig` von dieser Variablen aus aufrufen, um die
+Abbildung in einer Datei zu speichern.
 
 ```python
 data.plot(kind='bar')
@@ -360,27 +381,44 @@ fig.savefig('my_figure.png')
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Making your plots accessible
+## Zugänglich machen von Plots
 
-Whenever you are generating plots to go into a paper or a presentation, there are a few things you can do to make sure that everyone can understand your plots.
+Wenn Sie Diagramme für ein Papier oder eine Präsentation erstellen, gibt es ein paar
+Dinge, die Sie tun können, um sicherzustellen, dass jeder Ihre Diagramme verstehen kann.
 
-- Always make sure your text is large enough to read. Use the `fontsize` parameter in `xlabel`, `ylabel`, `title`, and `legend`, and [`tick_params` with `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html) to increase the text size of the numbers on your axes.
-- Similarly, you should make your graph elements easy to see. Use `s` to increase the size of your scatterplot markers and `linewidth` to increase the sizes of your plot lines.
-- Using color (and nothing else) to distinguish between different plot elements will make your plots unreadable to anyone who is colorblind, or who happens to have a black-and-white office printer. For lines, the `linestyle` parameter lets you use different types of lines. For scatterplots, `marker` lets you change the shape of your points. If you're unsure about your colors, you can use [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) or [Color Oracle](https://colororacle.org/) to simulate what your plots would look like to those with colorblindness.
-  
+- Stellen Sie immer sicher, dass Ihr Text groß genug ist, um ihn zu lesen. Verwenden Sie
+  den Parameter `fontsize` in `xlabel`, `ylabel`, `title` und `legend`, und
+  [`tick_params` mit
+  `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html),
+  um die Textgröße der Zahlen auf Ihren Achsen zu erhöhen.
+- In ähnlicher Weise sollten Sie die Elemente Ihres Graphen gut sichtbar machen.
+  Benutzen Sie `s`, um die Größe Ihrer Streudiagramm-Markierungen zu erhöhen und
+  `linewidth`, um die Größe Ihrer Diagrammlinien zu erhöhen.
+- Die Verwendung von Farbe (und nichts anderem) zur Unterscheidung zwischen
+  verschiedenen Plot-Elementen macht Ihre Plots unlesbar für jeden, der farbenblind ist
+  oder zufällig einen Schwarz-Weiß-Bürodrucker hat. Für Linien können Sie mit dem
+  Parameter `linestyle` verschiedene Linientypen verwenden. Bei Streudiagrammen können
+  Sie mit `marker` die Form der Punkte ändern. Wenn Sie sich mit den Farben nicht sicher
+  sind, können Sie
+  [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) oder
+  [Color Oracle](https://colororacle.org/) verwenden, um zu simulieren, wie Ihre
+  Diagramme für Menschen mit Farbenblindheit aussehen würden.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- [`matplotlib`](https://matplotlib.org/) is the most widely used scientific plotting library in Python.
-- Plot data directly from a Pandas dataframe.
-- Select and transform data, then plot it.
-- Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
-- Can plot many sets of data together.
+- [`matplotlib`](https://matplotlib.org/) ist die am weitesten verbreitete
+  wissenschaftliche Plotting-Bibliothek in Python.
+- Plotten von Daten direkt aus einem Pandas-Datenframe.
+- Wählen Sie Daten aus, transformieren Sie sie und stellen Sie sie dann dar.
+- Es stehen viele Darstellungsarten zur Verfügung: Weitere Optionen finden Sie in der
+  [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/).
+- Kann viele Datensätze zusammen darstellen.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

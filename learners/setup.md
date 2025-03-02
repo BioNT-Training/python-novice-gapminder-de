@@ -1,22 +1,26 @@
 ---
-title: Setup
+title: Einrichtung
 ---
 
-## Getting the Data
 
-The data we will be using is taken from the [gapminder] dataset.
-To obtain it, download and unzip the file
-[python-novice-gapminder-data.zip](files/python-novice-gapminder-data.zip).
-In order to follow the presented material, you should launch the JupyterLab
-server in the root directory (see [Starting JupyterLab](episodes/01-run-quit.md#starting-jupyterlab)).
+## Abrufen der Daten
 
-## Installing Python Using Anaconda
+Die Daten, die wir verwenden werden, stammen aus dem [gapminder]-Datensatz. Um sie zu
+erhalten, laden Sie die Datei
+[python-novice-gapminder-data.zip](files/python-novice-gapminder-data.zip) herunter und
+entpacken sie. Um dem vorgestellten Material folgen zu können, sollten Sie den
+JupyterLab-Server im Stammverzeichnis starten (siehe [JupyterLab
+starten](episodes/01-run-quit.md#starting-jupyterlab)).
 
-Please refer to the [Python section of the workshop website for installation instructions.](https://carpentries.github.io/workshop-template/install_instructions/#python)
+## Installation von Python mit Anaconda
+
+Installationsanweisungen finden Sie im [Python-Abschnitt der
+Workshop-Website](https://carpentries.github.io/workshop-template/install_instructions/#python)
 
 
 
 [gapminder]: https://en.wikipedia.org/wiki/Gapminder_Foundation
+
 
 
 

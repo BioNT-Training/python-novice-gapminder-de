@@ -1,43 +1,47 @@
 ---
-title: Writing Functions
+title: Funktionen schreiben
 teaching: 10
 exercises: 15
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain and identify the difference between function definition and function call.
-- Write a function that takes a small, fixed number of arguments and produces a single result.
+- Erklären und identifizieren Sie den Unterschied zwischen Funktionsdefinition und
+  Funktionsaufruf.
+- Schreiben Sie eine Funktion, die eine kleine, feste Anzahl von Argumenten annimmt und
+  ein einziges Ergebnis liefert.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I create my own functions?
+- Wie kann ich meine eigenen Funktionen erstellen?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Break programs down into functions to make them easier to understand.
+## Zerlegen Sie Programme in Funktionen, um sie besser verstehen zu können.
 
-- Human beings can only keep a few items in working memory at a time.
-- Understand larger/more complicated ideas by understanding and combining pieces.
-  - Components in a machine.
-  - Lemmas when proving theorems.
-- Functions serve the same purpose in programs.
-  - *Encapsulate* complexity so that we can treat it as a single "thing".
-- Also enables *re-use*.
-  - Write one time, use many times.
+- Der Mensch kann nur einige wenige Dinge gleichzeitig im Arbeitsgedächtnis behalten.
+- Verstehen Sie größere/kompliziertere Ideen, indem Sie Teile verstehen und kombinieren.
+  - Komponenten in einer Maschine.
+  - Lemmata beim Beweisen von Theoremen.
+- Funktionen dienen in Programmen demselben Zweck.
+  - *Kapseln* wir die Komplexität ein, so dass wir sie als ein einziges "Ding" behandeln
+    können.
+- Ermöglicht auch die *Wiederverwendung*.
+  - Einmal schreiben, viele Male verwenden.
 
-## Define a function using `def` with a name, parameters, and a block of code.
+## Definieren Sie eine Funktion mit `def` mit einem Namen, Parametern und einem Codeblock.
 
-- Begin the definition of a new function with `def`.
-- Followed by the name of the function.
-  - Must obey the same rules as variable names.
-- Then *parameters* in parentheses.
-  - Empty parentheses if the function doesn't take any inputs.
-  - We will discuss this in detail in a moment.
-- Then a colon.
-- Then an indented block of code.
+- Beginnen Sie die Definition einer neuen Funktion mit `def`.
+- Gefolgt vom Namen der Funktion.
+  - Muss denselben Regeln gehorchen wie Variablennamen.
+- Dann *Parameter* in Klammern.
+  - Leere Klammern, wenn die Funktion keine Eingaben annimmt.
+  - Wir werden dies gleich im Detail besprechen.
+- Dann ein Doppelpunkt.
+- Dann ein eingerückter Code-Block.
 
 ```python
 def print_greeting():
@@ -46,11 +50,11 @@ def print_greeting():
     print('Right?')
 ```
 
-## Defining a function does not run it.
+## Durch die Definition einer Funktion wird diese nicht ausgeführt.
 
-- Defining a function does not run it.
-  - Like assigning a value to a variable.
-- Must call the function to execute the code it contains.
+- Die Definition einer Funktion führt sie nicht aus.
+  - Wie die Zuweisung eines Wertes zu einer Variablen.
+- Muss die Funktion aufrufen, um den in ihr enthaltenen Code auszuführen.
 
 ```python
 print_greeting()
@@ -60,14 +64,15 @@ print_greeting()
 Hello!
 ```
 
-## Arguments in a function call are matched to its defined parameters.
+## Argumente in einem Funktionsaufruf werden mit ihren definierten Parametern abgeglichen.
 
-- Functions are most useful when they can operate on different data.
-- Specify *parameters* when defining a function.
-  - These become variables when the function is executed.
-  - Are assigned the arguments in the call (i.e., the values passed to the function).
-  - If you don't name the arguments when using them in the call, the arguments will be matched to
-    parameters in the order the parameters are defined in the function.
+- Funktionen sind am nützlichsten, wenn sie mit verschiedenen Daten arbeiten können.
+- Geben Sie *Parameter* an, wenn Sie eine Funktion definieren.
+  - Diese werden zu Variablen, wenn die Funktion ausgeführt wird.
+  - werden die Argumente im Aufruf (d.h. die der Funktion übergebenen Werte) zugeordnet.
+  - Wenn Sie die Argumente nicht benennen, wenn Sie sie im Aufruf verwenden, werden die
+    Argumente den Parametern in der Reihenfolge zugeordnet, in der die Parameter in der
+    Funktion definiert sind.
 
 ```python
 def print_date(year, month, day):
@@ -81,10 +86,10 @@ print_date(1871, 3, 19)
 1871/3/19
 ```
 
-Or, we can name the arguments when we call the function, which allows us to
-specify them in any order and adds clarity to the call site; otherwise as
-one is reading the code they might forget if the second argument is the month
-or the day for example.
+Oder wir können die Argumente benennen, wenn wir die Funktion aufrufen, was uns erlaubt,
+sie in beliebiger Reihenfolge anzugeben und die Aufrufseite übersichtlicher zu
+gestalten; andernfalls könnte man beim Lesen des Codes vergessen, ob das zweite Argument
+zum Beispiel der Monat oder der Tag ist.
 
 ```python
 print_date(month=3, day=19, year=1871)
@@ -94,17 +99,16 @@ print_date(month=3, day=19, year=1871)
 1871/3/19
 ```
 
-- Via [Twitter](https://twitter.com/minisciencegirl/status/693486088963272705):
-  `()` contains the ingredients for the function
-  while the body contains the recipe.
+- Über [Twitter](https://twitter.com/minisciencegirl/status/693486088963272705): `()`
+  enthält die Zutaten für die Funktion, während der Körper das Rezept enthält.
 
-## Functions may return a result to their caller using `return`.
+## Funktionen können mit `return` ein Ergebnis an ihren Aufrufer zurückgeben.
 
-- Use `return ...` to give a value back to the caller.
-- May occur anywhere in the function.
-- But functions are easier to understand if `return` occurs:
-  - At the start to handle special cases.
-  - At the very end, with a final result.
+- Verwenden Sie `return ...`, um einen Wert an den Aufrufer zurückzugeben.
+- Kann an beliebiger Stelle in der Funktion auftreten.
+- Aber Funktionen sind leichter zu verstehen, wenn `return` vorkommt:
+  - Am Anfang, um Sonderfälle zu behandeln.
+  - Ganz am Ende, mit einem Endergebnis.
 
 ```python
 def average(values):
@@ -130,8 +134,9 @@ print('average of empty list:', average([]))
 average of empty list: None
 ```
 
-- Remember: [every function returns something](04-built-in.md).
-- A function that doesn't explicitly `return` a value automatically returns `None`.
+- Zur Erinnerung: [jede Funktion gibt etwas zurück](04-built-in.md).
+- Eine Funktion, die nicht ausdrücklich `return` einen Wert angibt, gibt automatisch
+  `None` zurück.
 
 ```python
 result = print_date(1871, 3, 19)
@@ -143,16 +148,16 @@ print('result of call is:', result)
 result of call is: None
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Identifying Syntax Errors
+## Erkennen von Syntaxfehlern
 
-1. Read the code below and try to identify what the errors are
-  *without* running it.
-2. Run the code and read the error message.
-  Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3 until you have fixed all the errors.
+1. Lesen Sie den folgenden Code und versuchen Sie, die Fehler zu identifizieren, ohne
+   ihn auszuführen.
+2. Führen Sie den Code aus und lesen Sie die Fehlermeldung. Ist es ein `SyntaxError`
+   oder ein `IndentationError`?
+3. Beheben Sie den Fehler.
+4. Wiederholen Sie die Schritte 2 und 3, bis Sie alle Fehler behoben haben.
 
 ```python
 def another_function
@@ -161,9 +166,9 @@ def another_function
   print("So they are usually not too hard to fix.")
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 def another_function():
@@ -176,11 +181,11 @@ def another_function():
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Definition and Use
+## Definition und Verwendung
 
-What does the following program print?
+Was gibt das folgende Programm aus?
 
 ```python
 def report(pressure):
@@ -189,15 +194,18 @@ def report(pressure):
 print('calling', report, 22.5)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```output
 calling <function report at 0x7fd128ff1bf8> 22.5
 ```
 
-A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+Ein Funktionsaufruf muss immer in Klammern gesetzt werden, sonst erhält man die
+Speicheradresse des Funktionsobjekts. Wenn wir also die Funktion mit dem Namen report
+aufrufen und ihr den Wert 22.5 geben wollen, könnten wir unseren Funktionsaufruf wie
+folgt formulieren
 
 ```python
 print("calling")
@@ -213,61 +221,65 @@ pressure is 22.5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Order of Operations
+## Reihenfolge der Operationen
 
-1. What's wrong in this example?
-  
+1. Was ist in diesem Beispiel falsch?
+
   ```python
   result = print_time(11, 37, 59)
-  
+
   def print_time(hour, minute, second):
      time_string = str(hour) + ':' + str(minute) + ':' + str(second)
      print(time_string)
   ```
 
-2. After fixing the problem above, explain why running this example code:
-  
+2. Erläutern Sie nach der Lösung des obigen Problems, warum dieser Beispielcode
+   ausgeführt wird:
+
   ```python
   result = print_time(11, 37, 59)
   print('result of call is:', result)
   ```
-  
-  gives this output:
-  
+
+ergibt diese Ausgabe:
+
   ```output
   11:37:59
   result of call is: None
   ```
 
-3. Why is the result of the call `None`?
+3. Warum ist das Ergebnis des Aufrufs `None`?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-1. The problem with the example is that the function `print_time()` is defined *after* the call to the function is made. Python
-  doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a `NameError` e.g.,
-  `NameError: name 'print_time' is not defined`
+1. Das Problem bei diesem Beispiel ist, dass die Funktion `print_time()` erst *nach* dem
+   Aufruf der Funktion definiert wird. Python weiß nicht, wie es den Namen `print_time`
+   auflösen soll, da er noch nicht definiert wurde, und wird ein `NameError` auslösen,
+   z.B. `NameError: name 'print_time' is not defined`
 
-2. The first line of output `11:37:59` is printed by the first line of code, `result = print_time(11, 37, 59)` that binds the value
-  returned by invoking `print_time` to the variable `result`. The second line is from the second print call to print the contents
-  of the `result` variable.
+2. Die erste Zeile der Ausgabe `11:37:59` wird von der ersten Codezeile `result =
+   print_time(11, 37, 59)` gedruckt, die den durch den Aufruf von `print_time`
+   zurückgegebenen Wert an die Variable `result` bindet. Die zweite Zeile stammt aus dem
+   zweiten Druckaufruf, um den Inhalt der Variablen `result` zu drucken.
 
-3. `print_time()` does not explicitly `return` a value, so it automatically returns `None`.
+3. `print_time()` nicht explizit `return` einen Wert, so dass es automatisch `None`
+   zurückgibt.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Encapsulation
+## Verkapselung
 
-Fill in the blanks to create a function that takes a single filename as an argument,
-loads the data in the file named by the argument,
-and returns the minimum value in that data.
+Füllen Sie die Leerzeichen aus, um eine Funktion zu erstellen, die einen einzelnen
+Dateinamen als Argument nimmt, die Daten in die durch das Argument benannte Datei lädt
+und den Mindestwert in diesen Daten zurückgibt.
 
 ```python
 import pandas as pd
@@ -277,9 +289,9 @@ def min_in_data(____):
     return ____
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 import pandas as pd
@@ -293,13 +305,14 @@ def min_in_data(filename):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Find the First
+## Finde die erste
 
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty? What if the list has no negative numbers?
+Füllen Sie die Lücken aus, um eine Funktion zu erstellen, die eine Liste von Zahlen als
+Argument nimmt und den ersten negativen Wert in der Liste zurückgibt. Was macht Ihre
+Funktion, wenn die Liste leer ist? Was ist, wenn die Liste keine negativen Zahlen
+enthält?
 
 ```python
 def first_negative(values):
@@ -308,9 +321,9 @@ def first_negative(values):
             return ____
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 def first_negative(values):
@@ -319,7 +332,8 @@ def first_negative(values):
             return v
 ```
 
-If an empty list or a list with all positive values is passed to this function, it returns `None`:
+Wenn eine leere Liste oder eine Liste mit allen positiven Werten an diese Funktion
+übergeben wird, gibt sie `None` zurück:
 
 ```python
 my_list = []
@@ -334,11 +348,11 @@ None
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Calling by Name
+## Aufruf durch Name
 
-Earlier we saw this function:
+Vorhin haben wir diese Funktion gesehen:
 
 ```python
 def print_date(year, month, day):
@@ -346,40 +360,43 @@ def print_date(year, month, day):
     print(joined)
 ```
 
-We saw that we can call the function using *named arguments*, like this:
+Wir haben gesehen, dass wir die Funktion mit *benannten Argumenten* aufrufen können,
+etwa so:
 
 ```python
 print_date(day=1, month=2, year=2003)
 ```
 
-1. What does `print_date(day=1, month=2, year=2003)` print?
-2. When have you seen a function call like this before?
-3. When and why is it useful to call functions this way?
+1. Was gibt `print_date(day=1, month=2, year=2003)` aus?
+2. Wann haben Sie schon einmal einen Funktionsaufruf wie diesen gesehen?
+3. Wann und warum ist es sinnvoll, Funktionen auf diese Weise aufzurufen?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 1. `2003/2/1`
-2. We saw examples of using *named arguments* when working with the pandas library. For example, when reading in a dataset
-  using `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, the last argument `index_col` is a
-  named argument.
-3. Using named arguments can make code more readable since one can see from the function call what name the different arguments
-  have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments
-  the order doesn't matter.
-  
-  
+2. Wir haben Beispiele für die Verwendung von *benannten Argumenten* bei der Arbeit mit
+   der Pandas-Bibliothek gesehen. Wenn man zum Beispiel einen Datensatz mit `data =
+   pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')` einliest, ist das
+   letzte Argument `index_col` ein benanntes Argument.
+3. Die Verwendung von benannten Argumenten kann den Code lesbarer machen, da man aus dem
+   Funktionsaufruf erkennen kann, welchen Namen die verschiedenen Argumente innerhalb
+   der Funktion haben. Es kann auch die Wahrscheinlichkeit verringern, dass Argumente in
+   der falschen Reihenfolge übergeben werden, da bei der Verwendung von benannten
+   Argumenten die Reihenfolge keine Rolle spielt.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Encapsulation of an If/Print Block
+## Verkapselung eines If/Print-Blocks
 
-The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams)
-to the computer and then the computer will print a label.
+Der folgende Code wird auf einem Etikettendrucker für Hühnereier ausgeführt. Eine
+digitale Waage meldet dem Computer die Masse eines Hühnereis (in Gramm) und der Computer
+druckt dann ein Etikett.
 
 ```python
 import random
@@ -402,9 +419,10 @@ for i in range(10):
         print("small")
 ```
 
-The if-block that classifies the eggs might be useful in other situations,
-so to avoid repeating it, we could fold it into a function, `get_egg_label()`.
-Revising the program to use the function would give us this:
+Der if-Block, der die Eier klassifiziert, könnte auch in anderen Situationen nützlich
+sein. Um eine Wiederholung zu vermeiden, könnten wir ihn in eine Funktion falten,
+`get_egg_label()`. Wenn wir das Programm überarbeiten, um die Funktion zu verwenden,
+würden wir folgendes erhalten:
 
 ```python
 # revised version
@@ -419,12 +437,18 @@ for i in range(10):
 
 ```
 
-1. Create a function definition for `get_egg_label()` that will work with the revised program above.  Note that the `get_egg_label()` function's return value will be important. Sample output from the above program would be `71.23 large`.
-2. A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `get_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
+1. Erstellen Sie eine Funktionsdefinition für `get_egg_label()`, die mit dem
+   überarbeiteten Programm oben funktionieren wird. Beachten Sie, dass der Rückgabewert
+   der Funktion `get_egg_label()` wichtig sein wird. Die Beispielausgabe des obigen
+   Programms wäre `71.23 large`.
+2. Ein schmutziges Ei könnte eine Masse von mehr als 90 Gramm haben, und ein verdorbenes
+   oder zerbrochenes Ei hat wahrscheinlich eine Masse von weniger als 50 Gramm. Ändern
+   Sie Ihre Funktion `get_egg_label()`, um diese Fehlerbedingungen zu berücksichtigen.
+   Eine Beispielausgabe könnte `25 too light, probably spoiled` sein.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 def get_egg_label(mass):
@@ -449,11 +473,11 @@ def get_egg_label(mass):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Encapsulating Data Analysis
+## Verkapselnde Datenanalyse
 
-Assume that the following code has been executed:
+Nehmen Sie an, dass der folgende Code ausgeführt wurde:
 
 ```python
 import pandas as pd
@@ -462,17 +486,17 @@ data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
 japan = data_asia.loc['Japan']
 ```
 
-1. Complete the statements below to obtain the average GDP for Japan
-  across the years reported for the 1980s.
-  
+1. Vervollständigen Sie die nachstehenden Aussagen, um das durchschnittliche BIP Japans
+   über die für die 1980er Jahre angegebenen Jahre zu erhalten.
+
   ```python
   year = 1983
   gdp_decade = 'gdpPercap_' + str(year // ____)
   avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
   ```
 
-2. Abstract the code above into a single function.
-  
+2. Fassen Sie den obigen Code in einer einzigen Funktion zusammen.
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
@@ -482,26 +506,27 @@ japan = data_asia.loc['Japan']
       return avg
   ```
 
-3. How would you generalize this function
-  if you did not know beforehand which specific years occurred as columns in the data?
-  For instance, what if we also had data from years ending in 1 and 9 for each decade?
-  (Hint: use the columns to filter out the ones that correspond to the decade,
-  instead of enumerating them in the code.)
+3. Wie würden Sie diese Funktion verallgemeinern, wenn Sie im Voraus nicht wüssten,
+   welche spezifischen Jahre als Spalten in den Daten vorkommen? Was wäre zum Beispiel,
+   wenn wir für jedes Jahrzehnt auch Daten von Jahren hätten, die mit 1 und 9 enden?
+   (Tipp: Verwenden Sie die Spalten, um die Spalten herauszufiltern, die dem Jahrzehnt
+   entsprechen, anstatt sie im Code aufzuzählen)
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-1. The average GDP for Japan across the years reported for the 1980s is computed with:
-  
+1. Das durchschnittliche BIP für Japan über die Jahre, die für die 1980er Jahre
+   berichtet werden, wird mit berechnet:
+
   ```python
   year = 1983
   gdp_decade = 'gdpPercap_' + str(year // 10)
   avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
   ```
 
-2. That code as a function is:
-  
+2. Dieser Code als Funktion ist:
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
@@ -511,8 +536,9 @@ japan = data_asia.loc['Japan']
       return avg
   ```
 
-3. To obtain the average for the relevant years, we need to loop over them:
-  
+3. Um den Durchschnitt für die betreffenden Jahre zu erhalten, müssen wir eine Schleife
+   über sie ziehen:
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
@@ -527,7 +553,7 @@ japan = data_asia.loc['Japan']
       return total/num_years
   ```
 
-The function can now be called by:
+Die Funktion kann nun aufgerufen werden durch:
 
 ```python
 avg_gdp_in_decade('Japan','asia',1983)
@@ -541,45 +567,52 @@ avg_gdp_in_decade('Japan','asia',1983)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Simulating a dynamical system
+## Simulation eines dynamischen Systems
 
-In mathematics, a [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) is a system
-in which a function describes the time dependence of a point in a geometrical space. A canonical
-example of a dynamical system is the [logistic map](https://en.wikipedia.org/wiki/Logistic_map),
-a growth model that computes a new population density (between  0 and 1) based on the current
-density. In the model, time takes discrete values 0, 1, 2, ...
+In der Mathematik ist ein [dynamisches
+System](https://en.wikipedia.org/wiki/Dynamical_system) ein System, in dem eine Funktion
+die Zeitabhängigkeit eines Punktes in einem geometrischen Raum beschreibt. Ein
+kanonisches Beispiel für ein dynamisches System ist die [logistische
+Karte](https://en.wikipedia.org/wiki/Logistic_map), ein Wachstumsmodell, das eine neue
+Bevölkerungsdichte (zwischen 0 und 1) auf der Grundlage der aktuellen Dichte berechnet.
+In diesem Modell nimmt die Zeit die diskreten Werte 0, 1, 2, ...
 
-1. Define a function called `logistic_map` that takes two inputs: `x`, representing the current
-  population (at time `t`), and a parameter `r = 1`. This function should return a value
-  representing the state of the system (population) at time `t + 1`, using the mapping function:
-  
-  `f(t+1) = r * f(t) * [1 - f(t)]`
+1. Definieren Sie eine Funktion namens `logistic_map`, die zwei Eingaben benötigt: `x`,
+   die die aktuelle Bevölkerung (zum Zeitpunkt `t`) darstellt, und einen Parameter `r =
+   1`. Diese Funktion sollte einen Wert zurückgeben, der den Zustand des Systems (der
+   Population) zum Zeitpunkt `t + 1` repräsentiert, wobei die Abbildungsfunktion
+   verwendet wird:
 
-2. Using a `for` or `while` loop, iterate the `logistic_map` function defined in part 1, starting
-  from an initial population of 0.5, for a period of time `t_final = 10`. Store the intermediate
-  results in a list so that after the loop terminates you have accumulated a sequence of values
-  representing the state of the logistic map at times `t = [0,1,...,t_final]` (11 values in total).
-  Print this list to see the evolution of the population.
+`f(t+1) = r * f(t) * [1 - f(t)]`
 
-3. Encapsulate the logic of your loop into a function called `iterate` that takes the initial
-  population as its first input, the parameter `t_final` as its second input and the parameter
-  `r` as its third input. The function should return the list of values representing the state of
-  the logistic map at times `t = [0,1,...,t_final]`. Run this function for periods `t_final = 100`
-  and `1000` and print some of the values. Is the population trending toward a steady state?
+2. Iterieren Sie die in Teil 1 definierte Funktion `logistic_map` ausgehend von einer
+   Grundgesamtheit von 0,5 über einen Zeitraum von `t_final = 10` in einer Schleife
+   `for` oder `while`. Speichern Sie die Zwischenergebnisse in einer Liste, so dass Sie
+   nach Beendigung der Schleife eine Folge von Werten haben, die den Zustand der
+   logistischen Karte zu Zeiten `t = [0,1,...,t_final]` (insgesamt 11 Werte) darstellen.
+   Drucken Sie diese Liste aus, um die Entwicklung der Population zu sehen.
 
-:::::::::::::::  solution
+3. Kapseln Sie die Logik Ihrer Schleife in eine Funktion mit dem Namen `iterate`, die
+   die Ausgangsbevölkerung als erste Eingabe, den Parameter `t_final` als zweite Eingabe
+   und den Parameter `r` als dritte Eingabe erhält. Die Funktion sollte die Liste der
+   Werte zurückgeben, die den Zustand der logistischen Karte zu den Zeitpunkten `t =
+   [0,1,...,t_final]` darstellen. Führen Sie diese Funktion für die Zeiträume `t_final =
+   100` und `1000` aus und geben Sie einige der Werte aus. Entwickelt sich die
+   Bevölkerung zu einem stabilen Zustand?
 
-## Solution
+::::::::::::::: solution
 
-1.
+## Lösung
+
+1. 
   ```python
   def logistic_map(x, r):
       return r * x * (1 - x)
   ```
 
-2.
+2. 
   ```python
   initial_population = 0.5
   t_final = 10
@@ -590,14 +623,14 @@ density. In the model, time takes discrete values 0, 1, 2, ...
       population.append( logistic_map(population[t], r) )
   ```
 
-3.
+3. 
   ```python
   def iterate(initial_population, t_final, r):
       population = [initial_population]
       for t in range(t_final):
           population.append( logistic_map(population[t], r) )
       return population
-  
+
   for period in (10, 100, 1000):
       population = iterate(0.5, period, 1)
       print(population[-1])
@@ -608,22 +641,22 @@ density. In the model, time takes discrete values 0, 1, 2, ...
   0.009395779870614648
   0.0009913908614406382
   ```
-  
-  The population seems to be approaching zero.
-  
-  
+
+Die Bevölkerung scheint sich dem Nullpunkt zu nähern.
+
+
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Using Functions With Conditionals in Pandas
+## Verwendung von Funktionen mit Konditionalen in Pandas
 
-Functions will often contain conditionals.  Here is a short example that
-will indicate which quartile the argument is in based on hand-coded values
-for the quartile cut points.
+Funktionen enthalten oft Konditionale. Hier ist ein kurzes Beispiel, das anzeigt, in
+welchem Quartil sich das Argument befindet, basierend auf handcodierten Werten für die
+Quartilsschnittpunkte.
 
 ```python
 def calculate_life_quartile(exp):
@@ -650,33 +683,36 @@ calculate_life_quartile(62.5)
 2
 ```
 
-That function would typically be used within a `for` loop, but Pandas has
-a different, more efficient way of doing the same thing, and that is by
-*applying* a function to a dataframe or a portion of a dataframe.  Here
-is an example, using the definition above.
+Diese Funktion würde typischerweise innerhalb einer `for`-Schleife verwendet werden,
+aber Pandas hat einen anderen, effizienteren Weg, das Gleiche zu tun, und zwar durch
+*Anwendung* einer Funktion auf einen Datenrahmen oder einen Teil eines Datenrahmens.
+Hier ist ein Beispiel, das die obige Definition verwendet.
 
 ```python
 data = pd.read_csv('data/gapminder_all.csv')
 data['life_qrtl'] = data['lifeExp_1952'].apply(calculate_life_quartile)
 ```
 
-There is a lot in that second line, so let's take it piece by piece.
-On the right side of the `=` we start with `data['lifeExp']`, which is the
-column in the dataframe called `data` labeled `lifExp`.  We use the
-`apply()` to do what it says, apply the `calculate_life_quartile` to the
-value of this column for every row in the dataframe.
+Diese zweite Zeile enthält eine ganze Menge, also gehen wir sie Stück für Stück durch.
+Auf der rechten Seite von `=` beginnen wir mit `data['lifeExp']`, das ist die Spalte in
+dem Datenrahmen namens `data` mit der Bezeichnung `lifExp`. Wir benutzen `apply()`, um
+das zu tun, was es sagt, nämlich `calculate_life_quartile` auf den Wert dieser Spalte
+für jede Zeile des Datenrahmens anzuwenden.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Break programs down into functions to make them easier to understand.
-- Define a function using `def` with a name, parameters, and a block of code.
-- Defining a function does not run it.
-- Arguments in a function call are matched to its defined parameters.
-- Functions may return a result to their caller using `return`.
+- Zerlegen Sie Programme in Funktionen, um sie besser verstehen zu können.
+- Definieren Sie eine Funktion mit `def` mit einem Namen, Parametern und einem
+  Codeblock.
+- Die Definition einer Funktion führt sie nicht aus.
+- Argumente in einem Funktionsaufruf werden mit ihren definierten Parametern
+  abgeglichen.
+- Funktionen können mit `return` ein Ergebnis an ihren Aufrufer zurückgeben.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

@@ -1,56 +1,65 @@
 ---
-title: Variables and Assignment
+title: Variablen und Zuweisungen
 teaching: 10
 exercises: 10
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Write programs that assign scalar values to variables and perform calculations with those values.
-- Correctly trace value changes in programs that use scalar assignment.
+- Schreibe Programme, die Variablen skalare Werte zuweisen und mit diesen Werten
+  Berechnungen durchführen.
+- Korrektes Verfolgen von Wertänderungen in Programmen, die skalare Zuweisungen
+  verwenden.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I store data in programs?
+- Wie kann ich Daten in Programmen speichern?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use variables to store values.
+## Verwenden Sie Variablen, um Werte zu speichern.
 
-- **Variables** are names for values.
+- **Variablen** sind Namen für Werte.
 
-- Variable names
-  
-  - can **only** contain letters, digits, and underscore `_` (typically used to separate words in long variable names)
-  - cannot start with a digit
-  - are **case sensitive** (age, Age and AGE are three different variables)
+- Variablennamen
 
-- The name should also be meaningful so you or another programmer know what it is
+  - kann **nur** Buchstaben, Ziffern und den Unterstrich `_` enthalten (typischerweise
+    verwendet, um Wörter in langen Variablennamen zu trennen)
+  - darf nicht mit einer Ziffer beginnen
+  - sind **groß-klein-klein** (Alter, Alter und AGE sind drei verschiedene Variablen)
 
-- Variable names that start with underscores like `__alistairs_real_age` have a special meaning
-  so we won't do that until we understand the convention.
+- Der Name sollte auch aussagekräftig sein, damit Sie oder ein anderer Programmierer
+  wissen, worum es sich handelt
 
-- In Python the `=` symbol assigns the value on the right to the name on the left.
+- Variablennamen, die mit Unterstrichen beginnen, wie z.B. `__alistairs_real_age`, haben
+  eine besondere Bedeutung, also werden wir das nicht tun, bis wir die Konvention
+  verstanden haben.
 
-- The variable is created when a value is assigned to it.
+- In Python ordnet das Symbol `=` den Wert auf der rechten Seite dem Namen auf der
+  linken Seite zu.
 
-- Here, Python assigns an age to a variable `age`
-  and a name in quotes to a variable `first_name`.
-  
+- Die Variable wird erstellt, wenn ihr ein Wert zugewiesen wird.
+
+- Hier ordnet Python der Variablen `age` ein Alter und der Variablen `first_name` einen
+  Namen in Anführungszeichen zu.
+
   ```python
   age = 42
   first_name = 'Ahmed'
   ```
 
-## Use `print` to display values.
+## Verwenden Sie `print`, um Werte anzuzeigen.
 
-- Python has a built-in function called `print` that prints things as text.
-- Call the function (i.e., tell Python to run it) by using its name.
-- Provide values to the function (i.e., the things to print) in parentheses.
-- To add a string to the printout, wrap the string in single or double quotes.
-- The values passed to the function are called **arguments**
+- Python hat eine eingebaute Funktion namens `print`, die Dinge als Text ausgibt.
+- Rufen Sie die Funktion auf (d.h. sagen Sie Python, dass es sie ausführen soll), indem
+  Sie ihren Namen verwenden.
+- Übergeben Sie der Funktion Werte (d.h. die zu druckenden Dinge) in Klammern.
+- Um eine Zeichenkette zum Ausdruck hinzuzufügen, schließen Sie die Zeichenkette in
+  einfache oder doppelte Anführungszeichen ein.
+- Die Werte, die an die Funktion übergeben werden, heißen **arguments**
 
 ```python
 print(first_name, 'is', age, 'years old')
@@ -60,13 +69,15 @@ print(first_name, 'is', age, 'years old')
 Ahmed is 42 years old
 ```
 
-- `print` automatically puts a single space between items to separate them.
-- And wraps around to a new line at the end.
+- `print` setzt automatisch ein einzelnes Leerzeichen zwischen die Elemente, um sie zu
+  trennen.
+- Und bricht am Ende in eine neue Zeile um.
 
-## Variables must be created before they are used.
+## Variablen müssen erstellt werden, bevor sie verwendet werden.
 
-- If a variable doesn't exist yet, or if the name has been mis-spelled,
-  Python reports an error. (Unlike some languages, which "guess" a default value.)
+- Wenn eine Variable noch nicht existiert, oder wenn der Name falsch geschrieben wurde,
+  meldet Python einen Fehler. (Im Gegensatz zu einigen Sprachen, die einen Standardwert
+  "erraten".)
 
 ```python
 print(last_name)
@@ -81,18 +92,21 @@ NameError                                 Traceback (most recent call last)
 NameError: name 'last_name' is not defined
 ```
 
-- The last line of an error message is usually the most informative.
-- We will look at error messages in detail [later](17-scope.md#reading-error-messages).
+- Die letzte Zeile einer Fehlermeldung ist normalerweise die informativste.
+- Wir werden uns Fehlermeldungen im Detail [später] ansehen
+  (17-scope.md#reading-error-messages).
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Variables Persist Between Cells
+## Variablen bleiben zwischen Zellen bestehen
 
-Be aware that it is the *order* of execution of cells that is important in a Jupyter notebook, not the order
-in which they appear. Python will remember *all* the code that was run previously, including any variables you have
-defined, irrespective of the order in the notebook. Therefore if you define variables lower down the notebook and then
-(re)run cells further up, those defined further down will still be present. As an example, create two cells with the
-following content, in this order:
+Beachten Sie, dass die *Reihenfolge* der Ausführung von Zellen in einem
+Jupyter-Notizbuch wichtig ist, nicht die Reihenfolge, in der sie erscheinen. Python
+merkt sich *den gesamten* Code, der zuvor ausgeführt wurde, einschließlich aller
+Variablen, die Sie definiert haben, unabhängig von der Reihenfolge im Notizbuch. Wenn
+Sie also Variablen weiter unten im Notizbuch definieren und dann Zellen weiter oben
+(erneut) ausführen, sind die weiter unten definierten Variablen weiterhin vorhanden.
+Erstellen Sie zum Beispiel zwei Zellen mit dem folgenden Inhalt in dieser Reihenfolge:
 
 ```python
 print(myval)
@@ -102,17 +116,19 @@ print(myval)
 myval = 1
 ```
 
-If you execute this in order, the first cell will give an error. However, if you run the first cell *after* the second
-cell it will print out `1`. To prevent confusion, it can be helpful to use the `Kernel` -> `Restart & Run All` option which
-clears the interpreter and runs everything from a clean slate going top to bottom.
+Wenn Sie dies der Reihe nach ausführen, wird die erste Zelle einen Fehler ergeben. Wenn
+Sie jedoch die erste Zelle *nach* der zweiten Zelle ausführen, wird sie `1` ausgeben. Um
+Verwirrung zu vermeiden, kann es hilfreich sein, die Option `Kernel` -> `Restart & Run
+All` zu verwenden, die den Interpreter löscht und alles von oben nach unten durchführt.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Variables can be used in calculations.
+## Variablen können in Berechnungen verwendet werden.
 
-- We can use variables in calculations just as if they were values.
-  - Remember, we assigned the value `42` to `age` a few lines ago.
+- Wir können Variablen in Berechnungen so verwenden, als wären sie Werte.
+  - Erinnern Sie sich daran, dass wir vor ein paar Zeilen den Wert `42` an `age`
+    zugewiesen haben.
 
 ```python
 age = age + 3
@@ -123,18 +139,21 @@ print('Age in three years:', age)
 Age in three years: 45
 ```
 
-## Use an index to get a single character from a string.
+## Verwenden Sie einen Index, um ein einzelnes Zeichen aus einer Zeichenkette zu erhalten.
 
-- The characters (individual letters, numbers, and so on) in a string are
-  ordered. For example, the string `'AB'` is not the same as `'BA'`. Because of
-  this ordering, we can treat the string as a list of characters.
-- Each position in the string (first, second, etc.) is given a number. This
-  number is called an **index** or sometimes a subscript.
-- Indices are numbered from 0.
-- Use the position's index in square brackets to get the character at that
-  position.
+- Die Zeichen (einzelne Buchstaben, Zahlen und so weiter) in einer Zeichenkette sind
+  geordnet. Zum Beispiel ist die Zeichenkette `'AB'` nicht dasselbe wie `'BA'`. Aufgrund
+  dieser Ordnung können wir die Zeichenfolge als eine Liste von Zeichen behandeln.
+- Jede Position in der Zeichenkette (erste, zweite usw.) erhält eine Nummer. Diese Zahl
+  wird als **Index** oder manchmal auch als tiefgestellt bezeichnet.
+- Indizes sind nummeriert von 0.
+- Verwenden Sie den Index der Position in eckigen Klammern, um das Zeichen an dieser
+  Position zu erhalten.
 
-![A line of Python code, print(atom\_name[0]), demonstrates that using the zero index will output just the initial letter, in this case 'h' for helium.](fig/2_indexing.svg){alt='Explain indexing by printing subsets of the string'}
+![Eine Python-Codezeile, print(atom\_name[0]), demonstriert, dass bei Verwendung des
+Null-Index nur der Anfangsbuchstabe ausgegeben wird, in diesem Fall 'h' für
+Helium.](fig/2_indexing.svg){alt='Erläutern Sie die Indizierung, indem Sie Teilmengen
+der Zeichenkette drucken'}
 
 ```python
 atom_name = 'helium'
@@ -145,19 +164,20 @@ print(atom_name[0])
 h
 ```
 
-## Use a slice to get a substring.
+## Verwenden Sie ein Slice, um eine Teilzeichenkette zu erhalten.
 
-- A part of a string is called a **substring**. A substring can be as short as a
-  single character.
-- An item in a list is called an element. Whenever we treat a string as if it
-  were a list, the string's elements are its individual characters.
-- A slice is a part of a string (or, more generally, a part of any list-like thing).
-- We take a slice with the notation `[start:stop]`, where `start` is the integer
-  index of the first element we want and `stop` is the integer index of
-  the element *just after* the last element we want.
-- The difference between `stop` and `start` is the slice's length.
-- Taking a slice does not change the contents of the original string. Instead,
-  taking a slice returns a copy of part of the original string.
+- Ein Teil einer Zeichenkette wird **Substring** genannt. Ein Teilstring kann so kurz
+  wie ein einzelnes Zeichen sein.
+- Ein Element in einer Liste wird Element genannt. Wenn wir eine Zeichenkette wie eine
+  Liste behandeln, sind die Elemente der Zeichenkette ihre einzelnen Zeichen.
+- Ein Slice ist ein Teil einer Zeichenkette (oder, allgemeiner, ein Teil einer
+  beliebigen listähnlichen Sache).
+- Wir nehmen ein Slice mit der Notation `[start:stop]`, wobei `start` der ganzzahlige
+  Index des ersten Elements ist, das wir wollen, und `stop` der ganzzahlige Index des
+  Elements *gerade nach* dem letzten Element ist, das wir wollen.
+- Der Unterschied zwischen `stop` und `start` ist die Länge des Slice.
+- Die Entnahme eines Slice verändert nicht den Inhalt der ursprünglichen Zeichenkette.
+  Stattdessen wird eine Kopie eines Teils der ursprünglichen Zeichenkette zurückgegeben.
 
 ```python
 atom_name = 'sodium'
@@ -168,7 +188,7 @@ print(atom_name[0:3])
 sod
 ```
 
-## Use the built-in function `len` to find the length of a string.
+## Verwenden Sie die eingebaute Funktion `len`, um die Länge einer Zeichenkette zu ermitteln.
 
 ```python
 print(len('helium'))
@@ -178,19 +198,20 @@ print(len('helium'))
 6
 ```
 
-- Nested functions are evaluated from the inside out,
-  like in mathematics.
+- Verschachtelte Funktionen werden von innen nach außen ausgewertet, wie in der
+  Mathematik.
 
-## Python is case-sensitive.
+## Python unterscheidet Groß- und Kleinschreibung.
 
-- Python thinks that upper- and lower-case letters are different,
-  so `Name` and `name` are different variables.
-- There are conventions for using upper-case letters at the start of variable names so we will use lower-case letters for now.
+- Python denkt, dass Groß- und Kleinbuchstaben unterschiedlich sind, also sind `Name`
+  und `name` unterschiedliche Variablen.
+- Es gibt Konventionen für die Verwendung von Großbuchstaben am Anfang von
+  Variablennamen, daher werden wir für den Moment Kleinbuchstaben verwenden.
 
-## Use meaningful variable names.
+## Verwenden Sie aussagekräftige Variablennamen.
 
-- Python doesn't care what you call variables as long as they obey the rules
-  (alphanumeric characters and the underscore).
+- Python kümmert sich nicht darum, wie Sie Variablen nennen, solange sie die Regeln
+  befolgen (alphanumerische Zeichen und der Unterstrich).
 
 ```python
 flabadab = 42
@@ -198,15 +219,16 @@ ewr_422_yY = 'Ahmed'
 print(ewr_422_yY, 'is', flabadab, 'years old')
 ```
 
-- Use meaningful variable names to help other people understand what the program does.
-- The most important "other person" is your future self.
+- Verwende aussagekräftige Variablennamen, damit andere Leute verstehen, was das
+  Programm macht.
+- Die wichtigste "andere Person" ist dein zukünftiges Ich.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Swapping Values
+## Vertauschen von Werten
 
-Fill the table showing the values of the variables in this program
-*after* each statement is executed.
+Füllen Sie die Tabelle mit den Werten der Variablen in diesem Programm aus, *nach* dem
+jede Anweisung ausgeführt wurde.
 
 ```python
 # Command  # Value of x   # Value of y   # Value of swap #
@@ -217,9 +239,9 @@ x = y      #              #              #               #
 y = swap   #              #              #               #
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```output
 # Command  # Value of x   # Value of y   # Value of swap #
@@ -230,8 +252,8 @@ x = y      # 3.0          # 3.0          # 1.0           #
 y = swap   # 3.0          # 1.0          # 1.0           #
 ```
 
-These three lines exchange the values in `x` and `y` using the `swap`
-variable for temporary storage. This is a fairly common programming idiom.
+Diese drei Zeilen tauschen die Werte in `x` und `y` aus, indem sie die Variable `swap`
+zur temporären Speicherung verwenden. Dies ist eine ziemlich übliche Programmiersprache.
 
 
 
@@ -239,13 +261,13 @@ variable for temporary storage. This is a fairly common programming idiom.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Predicting Values
+## Vorhersage von Werten
 
-What is the final value of `position` in the program below?
-(Try to predict the value without running the program,
-then check your prediction.)
+Was ist der endgültige Wert von `position` in dem untenstehenden Programm? (Versuchen
+Sie, den Wert vorherzusagen, ohne das Programm auszuführen, und überprüfen Sie dann Ihre
+Vorhersage)
 
 ```python
 initial = 'left'
@@ -253,9 +275,9 @@ position = initial
 initial = 'right'
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 print(position)
@@ -265,11 +287,10 @@ print(position)
 left
 ```
 
-The `initial` variable is assigned the value `'left'`.
-In the second line, the `position` variable also receives
-the string value `'left'`. In third line, the `initial` variable is given the
-value `'right'`, but the `position` variable retains its string value
-of `'left'`.
+Der Variablen `initial` wird der Wert `'left'` zugewiesen. In der zweiten Zeile erhält
+die Variable `position` ebenfalls den Stringwert `'left'`. In der dritten Zeile erhält
+die Variable `initial` den Wert `'right'`, aber die Variable `position` behält ihren
+String-Wert `'left'`.
 
 
 
@@ -277,21 +298,23 @@ of `'left'`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Herausforderung
 
-If you assign `a = 123`,
-what happens if you try to get the second digit of `a` via `a[1]`?
+Wenn Sie `a = 123` zuweisen, was passiert, wenn Sie versuchen, die zweite Ziffer von `a`
+über `a[1]` zu erhalten?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a
-number. In the [next lesson on types and type conversion](03-types-conversion.md)
-we will learn more about types and how to convert between different types. If you want the Nth digit of a number you
-can convert it into a string using the `str` built-in function and then perform an index operation on that string.
+Zahlen sind keine Zeichenketten oder Sequenzen und Python gibt einen Fehler aus, wenn
+Sie versuchen, eine Index-Operation mit einer Zahl durchzuführen. In der [nächsten
+Lektion über Typen und Typkonvertierung](03-types-conversion.md) werden wir mehr über
+Typen lernen und wie man zwischen verschiedenen Typen konvertiert. Wenn man die N-te
+Stelle einer Zahl sucht, kann man sie mit der eingebauten Funktion `str` in eine
+Zeichenkette umwandeln und dann eine Indexoperation mit dieser Zeichenkette durchführen.
 
 ```python
 a = 123
@@ -315,25 +338,23 @@ print(a[1])
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Choosing a Name
+## Auswahl eines Namens
 
-Which is a better variable name, `m`, `min`, or `minutes`?
-Why?
-Hint: think about which code you would rather inherit
-from someone who is leaving the lab:
+Welcher ist ein besserer Variablenname, `m`, `min` oder `minutes`? Tipp: Überlegen Sie,
+welchen Code Sie lieber von jemandem erben würden, der das Labor verlässt:
 
 1. `ts = m * 60 + s`
 2. `tot_sec = min * 60 + sec`
 3. `total_seconds = minutes * 60 + seconds`
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-`minutes` is better because `min` might mean something like "minimum"
-(and actually is an existing built-in function in Python that we will cover later).
+`minutes` ist besser, weil `min` so etwas wie "Minimum" bedeuten könnte (und eigentlich
+eine eingebaute Funktion in Python ist, die wir später behandeln werden).
 
 
 
@@ -341,20 +362,20 @@ from someone who is leaving the lab:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Slicing practice
+## Slicing Praxis
 
-What does the following program print?
+Was gibt das folgende Programm aus?
 
 ```python
 atom_name = 'carbon'
 print('atom_name[1:3] is:', atom_name[1:3])
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```output
 atom_name[1:3] is: ar
@@ -364,39 +385,44 @@ atom_name[1:3] is: ar
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Slicing concepts
+## Slicing-Konzepte
 
-Given the following string:
+Gegeben sei die folgende Zeichenkette:
 
 ```python
 species_name = "Acacia buxifolia"
 ```
 
-What would these expressions return?
+Was würden diese Ausdrücke zurückgeben?
 
 1. `species_name[2:8]`
-2. `species_name[11:]` (without a value after the colon)
-3. `species_name[:4]` (without a value before the colon)
-4. `species_name[:]` (just a colon)
+2. `species_name[11:]` (ohne einen Wert nach dem Doppelpunkt)
+3. `species_name[:4]` (ohne einen Wert vor dem Doppelpunkt)
+4. `species_name[:]` (nur ein Doppelpunkt)
 5. `species_name[11:-3]`
 6. `species_name[-5:-3]`
-7. What happens when you choose a `stop` value which is out of range? (i.e., try `species_name[0:20]` or `species_name[:103]`)
+7. Was passiert, wenn man einen `stop` Wert wählt, der außerhalb des Bereichs liegt?
+   (d.h., versuchen Sie `species_name[0:20]` oder `species_name[:103]`)
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solutions
+## Lösungen
 
-1. `species_name[2:8]` returns the substring `'acia b'`
-2. `species_name[11:]` returns the substring `'folia'`, from position 11 until the end
-3. `species_name[:4]` returns the substring `'Acac'`, from the start up to but not including position 4
-4. `species_name[:]` returns the entire string `'Acacia buxifolia'`
-5. `species_name[11:-3]` returns the substring `'fo'`, from the 11th position to the third last position
-6. `species_name[-5:-3]` also returns the substring `'fo'`, from the fifth last position to the third last
-7. If a part of the slice is out of range, the operation does not fail. `species_name[0:20]` gives the same result as `species_name[0:]`, and `species_name[:103]` gives the same result as `species_name[:]`
-  
-  
+1. `species_name[2:8]` gibt die Teilzeichenkette `'acia b'` zurück
+2. `species_name[11:]` gibt die Teilzeichenkette `'folia'` zurück, von Position 11 bis
+   zum Ende
+3. `species_name[:4]` gibt die Teilzeichenkette `'Acac'` zurück, vom Anfang bis zur
+   Position 4, aber ohne diese
+4. `species_name[:]` gibt die gesamte Zeichenkette `'Acacia buxifolia'` zurück
+5. `species_name[11:-3]` gibt die Teilzeichenkette `'fo'` zurück, von der 11. bis zur
+   drittletzten Position
+6. `species_name[-5:-3]` gibt auch die Teilzeichenkette `'fo'` zurück, von der
+   fünftletzten bis zur drittletzten Position
+7. Wenn ein Teil des Slice außerhalb des Bereichs liegt, schlägt die Operation nicht
+   fehl.`species_name[0:20]` liefert das gleiche Ergebnis wie `species_name[0:]`, und
+   `species_name[:103]` liefert das gleiche Ergebnis wie `species_name[:]`
 
 :::::::::::::::::::::::::
 
@@ -404,17 +430,20 @@ What would these expressions return?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use variables to store values.
-- Use `print` to display values.
-- Variables persist between cells.
-- Variables must be created before they are used.
-- Variables can be used in calculations.
-- Use an index to get a single character from a string.
-- Use a slice to get a substring.
-- Use the built-in function `len` to find the length of a string.
-- Python is case-sensitive.
-- Use meaningful variable names.
+- Verwende Variablen, um Werte zu speichern.
+- Verwenden Sie `print`, um Werte anzuzeigen.
+- Variablen bleiben zwischen Zellen bestehen.
+- Variablen müssen erstellt werden, bevor sie verwendet werden.
+- Variablen können in Berechnungen verwendet werden.
+- Verwenden Sie einen Index, um ein einzelnes Zeichen aus einer Zeichenkette zu
+  erhalten.
+- Verwenden Sie ein Slice, um eine Teilzeichenkette zu erhalten.
+- Verwenden Sie die eingebaute Funktion `len`, um die Länge einer Zeichenkette zu
+  ermitteln.
+- Python unterscheidet Groß- und Kleinschreibung.
+- Verwenden Sie aussagekräftige Variablennamen.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

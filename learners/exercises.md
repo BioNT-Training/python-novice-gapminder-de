@@ -1,7 +1,9 @@
 ---
-title: Further Exercises
+title: Weitere Übungen
 ---
 
-FIXME: exercises that don't fit into the regular schedule.
+
+FIXME: Übungen, die nicht in den regulären Zeitplan passen.
+
 
 

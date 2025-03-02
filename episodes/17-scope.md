@@ -1,32 +1,34 @@
 ---
-title: Variable Scope
+title: Variablenumfang
 teaching: 10
 exercises: 10
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify local and global variables.
-- Identify parameters as local variables.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- Identifizieren Sie lokale und globale Variablen.
+- Identifizieren Sie Parameter als lokale Variablen.
+- Lies einen Traceback und bestimme die Datei, Funktion und Zeilennummer, in der der
+  Fehler aufgetreten ist, den Fehlertyp und die Fehlermeldung.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do function calls actually work?
-- How can I determine where errors occurred?
+- Wie funktionieren eigentlich Funktionsaufrufe?
+- Wie kann ich feststellen, wo Fehler aufgetreten sind?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The scope of a variable is the part of a program that can 'see' that variable.
+## Der Geltungsbereich einer Variablen ist der Teil eines Programms, der diese Variable 'sehen' kann.
 
-- There are only so many sensible names for variables.
-- People using functions shouldn't have to worry about
-  what variable names the author of the function used.
-- People writing functions shouldn't have to worry about
-  what variable names the function's caller uses.
-- The part of a program in which a variable is visible is called its *scope*.
+- Es gibt nur so viele sinnvolle Namen für Variablen.
+- Leute, die Funktionen benutzen, sollten sich nicht darum kümmern müssen, welche
+  Variablennamen der Autor der Funktion benutzt hat.
+- Leute, die Funktionen schreiben, sollten sich nicht darum kümmern müssen, welche
+  Variablennamen der Funktionsaufrufer verwendet.
+- Der Teil eines Programms, in dem eine Variable sichtbar ist, wird ihr *Scope* genannt.
 
 ```python
 pressure = 103.9
@@ -36,14 +38,14 @@ def adjust(t):
     return temperature
 ```
 
-- `pressure` is a *global variable*.
-  - Defined outside any particular function.
-  - Visible everywhere.
-- `t` and `temperature` are *local variables* in `adjust`.
-  - Defined in the function.
-  - Not visible in the main program.
-  - Remember: a function parameter is a variable
-    that is automatically assigned a value when the function is called.
+- `pressure` ist eine *globale Variable*.
+  - Definiert außerhalb einer bestimmten Funktion.
+  - Überall sichtbar.
+- `t` und `temperature` sind *lokale Variablen* in `adjust`.
+  - Definiert in der Funktion.
+  - Nicht sichtbar im Hauptprogramm.
+  - Erinnern Sie sich: Ein Funktionsparameter ist eine Variable, der automatisch ein
+    Wert zugewiesen wird, wenn die Funktion aufgerufen wird.
 
 ```python
 print('adjusted:', adjust(0.9))
@@ -61,12 +63,12 @@ Traceback (most recent call last):
 NameError: name 'temperature' is not defined
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Local and Global Variable Use
+## Verwendung von lokalen und globalen Variablen
 
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
+Verfolge die Werte aller Variablen in diesem Programm, während es ausgeführt wird.
+(Verwenden Sie '---' als Wert der Variablen, bevor und nachdem sie existieren.)
 
 ```python
 limit = 100
@@ -80,18 +82,18 @@ print(clip(value))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Reading Error Messages
+## Lesen von Fehlermeldungen
 
-Read the traceback below, and identify the following:
+Lesen Sie den Traceback unten, und identifizieren Sie das Folgende:
 
-1. How many levels does the traceback have?
-2. What is the file name where the error occurred?
-3. What is the function name where the error occurred?
-4. On which line number in this function did the error occur?
-5. What is the type of error?
-6. What is the error message?
+1. Wie viele Ebenen hat der Traceback?
+2. Wie lautet der Name der Datei, in der der Fehler aufgetreten ist?
+3. Wie lautet der Name der Funktion, bei der der Fehler aufgetreten ist?
+4. Bei welcher Zeilennummer in dieser Funktion ist der Fehler aufgetreten?
+5. Um welche Art von Fehler handelt es sich?
+6. Wie lautet die Fehlermeldung?
 
 ```error
 ---------------------------------------------------------------------------
@@ -115,20 +117,20 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'Friday'
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-1. Three levels.
+1. Drei Ebenen.
 2. `errors_02.py`
 3. `print_message`
-4. Line 11
-5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
-  structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
-  in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
+4. Zeile 11
+5. `KeyError`. Diese Fehler treten auf, wenn versucht wird, einen Schlüssel
+   nachzuschlagen, der nicht vorhanden ist (normalerweise in einer Datenstruktur wie
+   einem Wörterbuch). Weitere Informationen über `KeyError` und andere eingebaute
+   Ausnahmen finden Sie in den [Python
+   docs](https://docs.python.org/3/library/exceptions.html#KeyError).
 6. `KeyError: 'Friday'`
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -136,8 +138,10 @@ KeyError: 'Friday'
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The scope of a variable is the part of a program that can 'see' that variable.
+- Der Geltungsbereich einer Variablen ist der Teil eines Programms, der diese Variable
+  'sehen' kann.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

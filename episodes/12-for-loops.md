@@ -1,38 +1,40 @@
 ---
-title: For Loops
+title: For-Schleifen
 teaching: 10
 exercises: 15
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what for loops are normally used for.
-- Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration.
-- Write for loops that use the Accumulator pattern to aggregate values.
+- Erläutern Sie, wozu for-Schleifen normalerweise verwendet werden.
+- Verfolgen Sie die Ausführung einer einfachen (nicht verschachtelten) Schleife und
+  geben Sie die Werte der Variablen in jeder Iteration korrekt an.
+- Schreiben Sie for-Schleifen, die das Accumulator-Muster verwenden, um Werte zu
+  aggregieren.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I make a program do many things?
+- Wie kann ich ein Programm dazu bringen, viele Dinge zu tun?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A *for loop* executes commands once for each value in a collection.
+## Eine *for-Schleife* führt Befehle für jeden Wert in einer Sammlung einmal aus.
 
-- Doing calculations on the values in a list one by one
-  is as painful as working with `pressure_001`, `pressure_002`, etc.
-- A *for loop* tells Python to execute some statements once for each value in a list,
-  a character string,
-  or some other collection.
-- "for each thing in this group, do these operations"
+- Die Berechnung der Werte in einer Liste ist genauso mühsam wie die Arbeit mit
+  `pressure_001`, `pressure_002`, etc.
+- Eine *for-Schleife* weist Python an, einige Anweisungen für jeden Wert in einer Liste,
+  einer Zeichenkette oder einer anderen Sammlung einmal auszuführen.
+- "führe für jedes Ding in dieser Gruppe diese Operationen aus"
 
 ```python
 for number in [2, 3, 5]:
     print(number)
 ```
 
-- This `for` loop is equivalent to:
+- Diese `for` Schleife ist äquivalent zu:
 
 ```python
 print(2)
@@ -40,7 +42,7 @@ print(3)
 print(5)
 ```
 
-- And the `for` loop's output is:
+- Und die Ausgabe der `for` Schleife ist:
 
 ```output
 2
@@ -48,23 +50,25 @@ print(5)
 5
 ```
 
-## A `for` loop is made up of a collection, a loop variable, and a body.
+## Eine `for`-Schleife besteht aus einer Auflistung, einer Schleifenvariablen und einem Körper.
 
 ```python
 for number in [2, 3, 5]:
     print(number)
 ```
 
-- The collection, `[2, 3, 5]`, is what the loop is being run on.
-- The body, `print(number)`, specifies what to do for each value in the collection.
-- The loop variable, `number`, is what changes for each *iteration* of the loop.
-  - The "current thing".
+- Die Sammlung, `[2, 3, 5]`, ist diejenige, auf der die Schleife ausgeführt wird.
+- Der Körper, `print(number)`, gibt an, was für jeden Wert in der Sammlung zu tun ist.
+- Die Schleifenvariable, `number`, ändert sich bei jeder *Iteration* der Schleife.
+  - Das "aktuelle Ding".
 
-## The first line of the `for` loop must end with a colon, and the body must be indented.
+## Die erste Zeile der `for`-Schleife muss mit einem Doppelpunkt enden, und der Körper muss eingerückt sein.
 
-- The colon at the end of the first line signals the start of a *block* of statements.
-- Python uses indentation rather than `{}` or `begin`/`end` to show *nesting*.
-  - Any consistent indentation is legal, but almost everyone uses four spaces.
+- Der Doppelpunkt am Ende der ersten Zeile signalisiert den Beginn eines *Blocks* von
+  Anweisungen.
+- Python verwendet Einrückungen anstelle von `{}` oder `begin`/`end`, um
+  *Schachtelungen* anzuzeigen.
+  - Jede konsistente Einrückung ist erlaubt, aber fast jeder verwendet vier Leerzeichen.
 
 ```python
 for number in [2, 3, 5]:
@@ -75,7 +79,7 @@ print(number)
 IndentationError: expected an indented block
 ```
 
-- Indentation is always meaningful in Python.
+- Die Einrückung ist in Python immer sinnvoll.
 
 ```python
 firstName = "Jon"
@@ -89,24 +93,24 @@ firstName = "Jon"
 IndentationError: unexpected indent
 ```
 
-- This error can be fixed by removing the extra spaces
-  at the beginning of the second line.
+- Dieser Fehler kann behoben werden, indem die zusätzlichen Leerzeichen am Anfang der
+  zweiten Zeile entfernt werden.
 
-## Loop variables can be called anything.
+## Schleifenvariablen können beliebig benannt werden.
 
-- As with all variables, loop variables are:
-  - Created on demand.
-  - Meaningless: their names can be anything at all.
+- Wie alle Variablen sind auch die Schleifenvariablen:
+  - Wird bei Bedarf erstellt.
+  - Bedeutungslos: ihre Namen können alles Mögliche sein.
 
 ```python
 for kitten in [2, 3, 5]:
     print(kitten)
 ```
 
-## The body of a loop can contain many statements.
+## Der Körper einer Schleife kann viele Anweisungen enthalten.
 
-- But no loop should be more than a few lines long.
-- Hard for human beings to keep larger chunks of code in mind.
+- Aber keine Schleife sollte mehr als ein paar Zeilen lang sein.
+- Für Menschen ist es schwer, sich größere Codeabschnitte zu merken.
 
 ```python
 primes = [2, 3, 5]
@@ -122,13 +126,15 @@ for p in primes:
 5 25 125
 ```
 
-## Use `range` to iterate over a sequence of numbers.
+## Verwenden Sie `range`, um über eine Folge von Zahlen zu iterieren.
 
-- The built-in function [`range`](https://docs.python.org/3/library/stdtypes.html#range) produces a sequence of numbers.
-  - *Not* a list: the numbers are produced on demand
-    to make looping over large ranges more efficient.
-- `range(N)` is the numbers 0..N-1
-  - Exactly the legal indices of a list or character string of length N
+- Die eingebaute Funktion
+  [`range`](https://docs.python.org/3/library/stdtypes.html#range) erzeugt eine Folge
+  von Zahlen.
+  - *Keine* Liste: Die Zahlen werden bei Bedarf erzeugt, um die Schleifenbildung über
+    große Bereiche effizienter zu machen.
+- `range(N)` ist die Zahlen 0..N-1
+  - Genau die zulässigen Indizes einer Liste oder Zeichenkette der Länge N
 
 ```python
 print('a range is not a list: range(0, 3)')
@@ -143,11 +149,12 @@ a range is not a list: range(0, 3)
 2
 ```
 
-## The Accumulator pattern turns many values into one.
+## Das Accumulator-Muster macht aus vielen Werten einen einzigen.
 
-- A common pattern in programs is to:
-  1. Initialize an *accumulator* variable to zero, the empty string, or the empty list.
-  2. Update the variable with values from a collection.
+- Ein häufiges Muster in Programmen ist to:
+  1. Initialisiere eine *Accumulator*-Variable auf Null, die leere Zeichenkette oder die
+     leere Liste.
+  2. Aktualisiere die Variable mit Werten aus einer Sammlung.
 
 ```python
 # Sum the first 10 integers.
@@ -161,24 +168,25 @@ print(total)
 55
 ```
 
-- Read `total = total + (number + 1)` as:
-  - Add 1 to the current value of the loop variable `number`.
-  - Add that to the current value of the accumulator variable `total`.
-  - Assign that to `total`, replacing the current value.
-- We have to add `number + 1` because `range` produces 0..9, not 1..10.
+- Lies `total = total + (number + 1)` als:
+  - Addiere 1 zum aktuellen Wert der Schleifenvariablen `number`.
+  - Addiere das zum aktuellen Wert der Akkumulatorvariablen `total`.
+  - Weisen Sie dies `total` zu und ersetzen Sie damit den aktuellen Wert.
+- Wir müssen `number + 1` hinzufügen, weil `range` 0..9 erzeugt, nicht 1..10.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Classifying Errors
+## Klassifizierung von Fehlern
 
-Is an indentation error a syntax error or a runtime error?
+Ist ein Einrückungsfehler ein Syntaxfehler oder ein Laufzeitfehler?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-An IndentationError is a syntax error. Programs with syntax errors cannot be started.
-A program with a runtime error will start but an error will be thrown under certain conditions.
+Ein IndentationError ist ein Syntaxfehler. Programme mit Syntaxfehlern können nicht
+gestartet werden. Ein Programm mit einem Laufzeitfehler wird zwar gestartet, aber unter
+bestimmten Bedingungen wird ein Fehler ausgelöst.
 
 
 
@@ -186,12 +194,12 @@ A program with a runtime error will start but an error will be thrown under cert
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Tracing Execution
+## Verfolgung der Ausführung
 
-Create a table showing the numbers of the lines that are executed when this program runs,
-and the values of the variables after each line is executed.
+Erstelle eine Tabelle mit den Zeilennummern, die bei der Ausführung dieses Programms
+ausgeführt werden, und den Werten der Variablen nach der Ausführung jeder Zeile.
 
 ```python
 total = 0
@@ -199,30 +207,30 @@ for char in "tin":
     total = total + 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-| Line no | Variables            | 
+| Line no | Variables            |
 | ------- | -------------------- |
-| 1       | total = 0            | 
-| 2       | total = 0 char = 't' | 
-| 3       | total = 1 char = 't' | 
-| 2       | total = 1 char = 'i' | 
-| 3       | total = 2 char = 'i' | 
-| 2       | total = 2 char = 'n' | 
-| 3       | total = 3 char = 'n' | 
+| 1       | total = 0            |
+| 2       | total = 0 char = 't' |
+| 3       | total = 1 char = 't' |
+| 2       | total = 1 char = 'i' |
+| 3       | total = 2 char = 'i' |
+| 2       | total = 2 char = 'n' |
+| 3       | total = 3 char = 'n' |
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Reversing a String
+## Umkehrung einer Zeichenkette
 
-Fill in the blanks in the program below so that it prints "nit"
-(the reverse of the original character string "tin").
+Füllen Sie die Leerzeichen im folgenden Programm so aus, dass es "nit" (das Gegenteil
+der ursprünglichen Zeichenkette "tin") ausgibt.
 
 ```python
 original = "tin"
@@ -232,9 +240,9 @@ for char in original:
 print(result)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 original = "tin"
@@ -248,12 +256,12 @@ print(result)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Practice Accumulating
+## Übung Akkumulieren
 
-Fill in the blanks in each of the programs below
-to produce the indicated result.
+Füllen Sie die Lücken in jedem der folgenden Programme aus, um das angegebene Ergebnis
+zu erhalten.
 
 ```python
 # Total length of the strings in the list: ["red", "green", "blue"] => 12
@@ -263,9 +271,9 @@ for word in ["red", "green", "blue"]:
 print(total)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 total = 0
@@ -284,9 +292,9 @@ for word in ["red", "green", "blue"]:
 print(lengths)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 lengths = []
@@ -306,9 +314,9 @@ for ____ in ____:
 print(result)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 words = ["red", "green", "blue"]
@@ -320,14 +328,15 @@ print(result)
 
 :::::::::::::::::::::::::
 
-**Create an acronym:** Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using
-a for loop.
+**Erstellen eines Akronyms:** Ausgehend von der Liste `["red", "green", "blue"]`,
+erstellen Sie das Akronym `"RGB"` mit Hilfe einer for-Schleife.
 
-**Hint:** You may need to use a string method to properly format the acronym.
+**Hinweis:** Möglicherweise müssen Sie eine String-Methode verwenden, um das Akronym
+richtig zu formatieren.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 acronym = ""
@@ -340,13 +349,13 @@ print(acronym)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Cumulative Sum
+## Kumulative Summe
 
-Reorder and properly indent the lines of code below
-so that they print a list with the cumulative sum of data.
-The result should be `[1, 3, 5, 10]`.
+Ordnen Sie die folgenden Codezeilen neu an und rücken Sie sie richtig ein, so dass sie
+eine Liste mit der kumulierten Summe der Daten ausgeben. Das Ergebnis sollte `[1, 3, 5,
+10]` sein.
 
 ```python
 cumulative.append(total)
@@ -358,9 +367,9 @@ print(cumulative)
 data = [1,2,2,5]
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 total = 0
@@ -376,18 +385,18 @@ print(cumulative)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Identifying Variable Name Errors
+## Identifizierung von Variablennamensfehlern
 
-1. Read the code below and try to identify what the errors are
-  *without* running it.
-2. Run the code and read the error message.
-  What type of `NameError` do you think this is?
-  Is it a string with no quotes, a misspelled variable, or a
-  variable that should have been defined but was not?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
+1. Lesen Sie den folgenden Code und versuchen Sie, die Fehler zu identifizieren, ohne
+   ihn auszuführen.
+2. Führen Sie den Code aus und lesen Sie die Fehlermeldung. Was für ein Typ von
+   `NameError` ist dies Ihrer Meinung nach? Ist es eine Zeichenkette ohne
+   Anführungszeichen, eine falsch geschriebene Variable oder eine Variable, die
+   definiert werden sollte, aber nicht definiert wurde?
+3. Beheben Sie den Fehler.
+4. Wiederholen Sie die Schritte 2 und 3, bis Sie alle Fehler behoben haben.
 
 ```python
 for number in range(10):
@@ -399,13 +408,15 @@ for number in range(10):
 print(message)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-- Python variable names are case sensitive: `number` and `Number` refer to different variables.
-- The variable `message` needs to be initialized as an empty string.
-- We want to add the string `"a"` to `message`, not the undefined variable `a`.
+- Bei Python-Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden:
+  `number` und `Number` beziehen sich auf unterschiedliche Variablen.
+- Die Variable `message` muss mit einem leeren String initialisiert werden.
+- Wir wollen die Zeichenkette `"a"` zu `message` hinzufügen, nicht die undefinierte
+  Variable `a`.
 
 ```python
 message = ""
@@ -422,25 +433,27 @@ print(message)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Identifying Item Errors
+## Identifizierung von Elementfehlern
 
-1. Read the code below and try to identify what the errors are
-  *without* running it.
-2. Run the code, and read the error message. What type of error is it?
-3. Fix the error.
+1. Lesen Sie den folgenden Code und versuchen Sie, die Fehler zu identifizieren, ohne
+   ihn auszuführen.
+2. Führen Sie den Code aus, und lesen Sie die Fehlermeldung. Um welche Art von Fehler
+   handelt es sich?
+3. Beheben Sie den Fehler.
 
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 print('My favorite season is ', seasons[4])
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-This list has 4 elements and the index to access the last element in the list is `3`.
+Diese Liste hat 4 Elemente und der Index für den Zugriff auf das letzte Element in der
+Liste ist `3`.
 
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
@@ -453,15 +466,19 @@ print('My favorite season is ', seasons[3])
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A *for loop* executes commands once for each value in a collection.
-- A `for` loop is made up of a collection, a loop variable, and a body.
-- The first line of the `for` loop must end with a colon, and the body must be indented.
-- Indentation is always meaningful in Python.
-- Loop variables can be called anything (but it is strongly advised to have a meaningful name to the looping variable).
-- The body of a loop can contain many statements.
-- Use `range` to iterate over a sequence of numbers.
-- The Accumulator pattern turns many values into one.
+- Eine *for-Schleife* führt Befehle einmal für jeden Wert in einer Sammlung aus.
+- Eine `for`-Schleife besteht aus einer Sammlung, einer Schleifenvariablen und einem
+  Körper.
+- Die erste Zeile der `for`-Schleife muss mit einem Doppelpunkt enden, und der Körper
+  muss eingerückt sein.
+- Die Einrückung ist in Python immer sinnvoll.
+- Schleifenvariablen können beliebig benannt werden (es wird jedoch dringend empfohlen,
+  einen aussagekräftigen Namen für die Schleifenvariable zu verwenden).
+- Der Körper einer Schleife kann viele Anweisungen enthalten.
+- Benutze `range`, um über eine Folge von Zahlen zu iterieren.
+- Das Accumulator-Muster macht aus vielen Werten einen einzigen.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

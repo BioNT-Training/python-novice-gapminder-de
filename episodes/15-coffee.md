@@ -1,18 +1,21 @@
 ---
-title: Afternoon Coffee
+title: Kaffee am Nachmittag
 teaching: 0
 exercises: 0
 break: 15
 ---
 
-## Reflection exercise
 
-Over break, reflect on and discuss the following:
+## Reflexionsübung
 
-- A common refrain in software engineering is "Don't Repeat Yourself". How do the techniques we've learned in the last
-  lessons help us avoid repeating ourselves? *Note that in practice there is some nuance to this and should be balanced
-  with doing the simplest thing that could possibly work.*
-- What are the pros / cons of making a variable global or local to a function?
-- When would you consider turning a block of code into a function definition?
+Denken Sie in der Pause über die folgenden Punkte nach und diskutieren Sie sie:
+
+- Ein gängiger Spruch in der Softwareentwicklung ist "Wiederhole dich nicht". Wie können
+  die Techniken, die wir in den letzten Lektionen gelernt haben, uns helfen,
+  Wiederholungen zu vermeiden? *Beachten Sie, dass es in der Praxis einige Nuancen gibt,
+  die mit der einfachsten Lösung, die möglich ist, in Einklang gebracht werden sollten
+- Was sind die Vor- und Nachteile, wenn man eine Variable global oder lokal zu einer
+  Funktion macht?
+- Wann würden Sie erwägen, einen Codeblock in eine Funktionsdefinition zu verwandeln?
 
 

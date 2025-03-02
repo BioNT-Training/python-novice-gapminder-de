@@ -1,52 +1,58 @@
 ---
-title: Libraries
+title: Bibliotheken
 teaching: 10
 exercises: 10
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what software libraries are and why programmers create and use them.
-- Write programs that import and use modules from Python's standard library.
-- Find and read documentation for the standard library interactively (in the interpreter) and online.
+- Erklären, was Softwarebibliotheken sind und warum Programmierer sie erstellen und
+  benutzen.
+- Schreibe Programme, die Module aus der Python-Standardbibliothek importieren und
+  verwenden.
+- Suchen und lesen Sie die Dokumentation der Standardbibliothek interaktiv (im
+  Interpreter) und online.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I use software that other people have written?
-- How can I find out what that software does?
+- Wie kann ich Software benutzen, die andere Leute geschrieben haben?
+- Wie kann ich herausfinden, was diese Software macht?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Most of the power of a programming language is in its libraries.
+## Der größte Teil der Macht einer Programmiersprache liegt in ihren Bibliotheken.
 
-- A *library* is a collection of files (called *modules*) that contains
-  functions for use by other programs.
-  - May also contain data values (e.g., numerical constants) and other things.
-  - Library's contents are supposed to be related, but there's no way to enforce that.
-- The Python [standard library][stdlib] is an extensive suite of modules that comes
-  with Python itself.
-- Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
-- We will see later how to write new libraries.
+- Eine *Bibliothek* ist eine Sammlung von Dateien (*Module* genannt), die Funktionen zur
+  Verwendung durch andere Programme enthält.
+  - Kann auch Datenwerte (z.B. numerische Konstanten) und andere Dinge enthalten.
+  - Der Inhalt einer Bibliothek sollte zusammengehören, aber es gibt keine Möglichkeit,
+    das zu erzwingen.
+- Die Python-[Standardbibliothek][stdlib] ist eine umfangreiche Sammlung von Modulen,
+  die mit Python selbst geliefert wird.
+- Viele zusätzliche Bibliotheken sind über [PyPI][pypi] (den Python Package Index)
+  erhältlich.
+- Wir werden später sehen, wie man neue Bibliotheken schreibt.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Libraries and modules
+## Bibliotheken und Module
 
-A library is a collection of modules, but the terms are often used
-interchangeably, especially since many libraries only consist of a single
-module, so don't worry if you mix them.
+Eine Bibliothek ist eine Sammlung von Modulen, aber die Begriffe werden oft austauschbar
+verwendet, vor allem, da viele Bibliotheken nur aus einem einzigen Modul bestehen, also
+mach dir keine Sorgen, wenn du sie vermischt.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A program must import a library module before using it.
+## Ein Programm muss ein Bibliotheksmodul importieren, bevor es es verwenden kann.
 
-- Use `import` to load a library module into a program's memory.
-- Then refer to things from the module as `module_name.thing_name`.
-  - Python uses `.` to mean "part of".
-- Using `math`, one of the modules in the standard library:
+- Benutze `import`, um ein Bibliotheksmodul in den Speicher eines Programms zu laden.
+- Dann verweise auf Dinge aus dem Modul als `module_name.thing_name`.
+  - Python verwendet `.` als Bezeichnung für "Teil von".
+- Verwendung von `math`, einem der Module der Standardbibliothek:
 
 ```python
 import math
@@ -60,13 +66,13 @@ pi is 3.141592653589793
 cos(pi) is -1.0
 ```
 
-- Have to refer to each item with the module's name.
-  - `math.cos(pi)` won't work: the reference to `pi`
-    doesn't somehow "inherit" the function's reference to `math`.
+- Auf jedes Element muss mit dem Namen des Moduls verwiesen werden.
+  - `math.cos(pi)` wird nicht funktionieren: der Verweis auf `pi` "erbt" nicht irgendwie
+    den Verweis der Funktion auf `math`.
 
-## Use `help` to learn about the contents of a library module.
+## Benutzen Sie `help`, um etwas über den Inhalt eines Bibliotheksmoduls zu erfahren.
 
-- Works just like help for a function.
+- Funktioniert genau wie die Hilfe für eine Funktion.
 
 ```python
 help(math)
@@ -97,10 +103,11 @@ FUNCTIONS
 ⋮ ⋮ ⋮
 ```
 
-## Import specific items from a library module to shorten programs.
+## Importieren Sie bestimmte Elemente aus einem Bibliotheksmodul, um Programme zu verkürzen.
 
-- Use `from ... import ...` to load only specific items from a library module.
-- Then refer to them directly without library name as prefix.
+- Verwenden Sie `from ... import ...`, um nur bestimmte Elemente aus einem
+  Bibliotheksmodul zu laden.
+- Dann verweisen Sie direkt auf sie ohne den Bibliotheksnamen als Präfix.
 
 ```python
 from math import cos, pi
@@ -112,10 +119,11 @@ print('cos(pi) is', cos(pi))
 cos(pi) is -1.0
 ```
 
-## Create an alias for a library module when importing it to shorten programs.
+## Erstellen Sie einen Alias für ein Bibliotheksmodul, wenn Sie es importieren, um Programme zu verkürzen.
 
-- Use `import ... as ...` to give a library a short *alias* while importing it.
-- Then refer to items in the library using that shortened name.
+- Benutzen Sie `import ... as ...`, um einer Bibliothek einen kurzen *Alias* zu geben,
+  während Sie sie importieren.
+- Dann verweisen Sie auf Elemente in der Bibliothek mit diesem verkürzten Namen.
 
 ```python
 import math as m
@@ -127,64 +135,67 @@ print('cos(pi) is', m.cos(m.pi))
 cos(pi) is -1.0
 ```
 
-- Commonly used for libraries that are frequently used or have long names.
-  - E.g., the `matplotlib` plotting library is often aliased as `mpl`.
-- But can make programs harder to understand,
-  since readers must learn your program's aliases.
+- Wird häufig für Bibliotheken verwendet, die häufig benutzt werden oder lange Namen
+  haben.
+  - z.B. wird die `matplotlib` Plot-Bibliothek oft als `mpl` aliasiert.
+- Dies kann jedoch dazu führen, dass Programme schwerer zu verstehen sind, da die Leser
+  die Aliasnamen Ihres Programms lernen müssen.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Exploring the Math Module
+## Erforschung des Math-Moduls
 
-1. What function from the `math` module can you use to calculate a square root
-  *without* using `sqrt`?
-2. Since the library contains this function, why does `sqrt` exist?
+1. Welche Funktion aus dem Modul `math` können Sie verwenden, um eine Quadratwurzel
+   *ohne* Verwendung von `sqrt` zu berechnen?
+2. Da die Bibliothek diese Funktion enthält, warum existiert `sqrt`?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-1. Using `help(math)` we see that we've got `pow(x,y)` in addition to `sqrt(x)`,
-  so we could use `pow(x, 0.5)` to find a square root.
+1. Mit `help(math)` sehen wir, dass wir `pow(x,y)` zusätzlich zu `sqrt(x)` haben, also
+   könnten wir `pow(x, 0.5)` benutzen, um eine Quadratwurzel zu finden.
 
-2. The `sqrt(x)` function is arguably more readable than `pow(x, 0.5)` when
-  implementing equations. Readability is a cornerstone of good programming, so it
-  makes sense to provide a special function for this specific common case.
-  
-  Also, the design of Python's `math` library has its origin in the C standard,
-  which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history
-  of programming is showing in Python's function names.
-  
-  
+2. Die Funktion `sqrt(x)` ist bei der Implementierung von Gleichungen wohl lesbarer als
+   `pow(x, 0.5)`. Lesbarkeit ist ein Eckpfeiler guter Programmierung, daher ist es
+   sinnvoll, eine spezielle Funktion für diesen speziellen Fall bereitzustellen.
+
+Auch das Design der Python-Bibliothek `math` hat seinen Ursprung im C-Standard, der
+sowohl `sqrt(x)` als auch `pow(x,y)` enthält, also zeigt sich ein wenig von der
+Geschichte des Programmierens in Pythons Funktionsnamen.
+
+
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Locating the Right Module
+## Auffinden des richtigen Moduls
 
-You want to select a random character from a string:
+Sie wollen ein zufälliges Zeichen aus einer Zeichenkette auswählen:
 
 ```python
 bases = 'ACTTGCTTGAC'
 ```
 
-1. Which [standard library][stdlib] module could help you?
-2. Which function would you select from that module? Are there alternatives?
-3. Try to write a program that uses the function.
+1. Welches [Standardbibliothek][stdlib]-Modul könnte Ihnen helfen?
+2. Welche Funktion würden Sie aus diesem Modul auswählen? Gibt es Alternativen?
+3. Versuche, ein Programm zu schreiben, das die Funktion verwendet.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-The [random module][randommod] seems like it could help.
+Das [Zufallsmodul][randommod] scheint zu helfen.
 
-The string has 11 characters, each having a positional index from 0 to 10.
-You could use the [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)
-or [`random.randint`](https://docs.python.org/3/library/random.html#random.randint) functions
-to get a random integer between 0 and 10, and then select the `bases` character at that index:
+Die Zeichenkette besteht aus 11 Zeichen, die jeweils einen Positionsindex von 0 bis 10
+haben. Sie könnten die Funktionen
+`random.randrange`(https://docs.python.org/3/library/random.html#random.randrange) oder
+`random.randint`(https://docs.python.org/3/library/random.html#random.randint)
+verwenden, um eine zufällige ganze Zahl zwischen 0 und 10 zu erhalten, und dann das
+Zeichen`bases`an diesem Index auswählen:
 
 ```python
 from random import randrange
@@ -193,7 +204,7 @@ random_index = randrange(len(bases))
 print(bases[random_index])
 ```
 
-or more compactly:
+oder noch kompakter:
 
 ```python
 from random import randrange
@@ -201,8 +212,10 @@ from random import randrange
 print(bases[randrange(len(bases))])
 ```
 
-Perhaps you found the [`random.sample`](https://docs.python.org/3/library/random.html#random.sample) function?
-It allows for slightly less typing but might be a bit harder to understand just by reading:
+Vielleicht haben Sie die Funktion
+[`random.sample`](https://docs.python.org/3/library/random.html#random.sample) gefunden?
+Sie ermöglicht etwas weniger Tipparbeit, ist aber vielleicht etwas schwerer zu
+verstehen, wenn man nur liest:
 
 ```python
 from random import sample
@@ -210,11 +223,12 @@ from random import sample
 print(sample(bases, 1)[0])
 ```
 
-Note that this function returns a list of values. We will learn about
-lists in [episode 11](11-lists.md).
+Beachten Sie, dass diese Funktion eine Liste von Werten zurückgibt. Wir werden in [Folge
+11](11-lists.md) etwas über Listen lernen.
 
-The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice)
-function that does exactly what we want:
+Die einfachste und kürzeste Lösung ist die Funktion
+[`random.choice`](https://docs.python.org/3/library/random.html#random.choice), die
+genau das tut, was wir wollen:
 
 ```python
 from random import choice
@@ -226,14 +240,13 @@ print(choice(bases))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Jigsaw Puzzle (Parson's Problem) Programming Example
+## Jigsaw Puzzle (Parsons's Problem) Programmierbeispiel
 
-Rearrange the following statements so that a random
-DNA base is printed and its index in the string.
-Not all statements may be needed.  Feel free to use/add
-intermediate variables.
+Ordnen Sie die folgenden Anweisungen so an, dass eine zufällige DNA-Base und ihr Index
+in der Zeichenkette ausgegeben wird. Es werden nicht alle Anweisungen benötigt. Sie
+können auch Zwischenvariablen verwenden/hinzufügen.
 
 ```python
 bases="ACTTGCTTGAC"
@@ -244,9 +257,9 @@ ___ = len(bases)
 print("random base ", bases[___], "base index", ___)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 import math 
@@ -261,24 +274,23 @@ print("random base", bases[idx], "base index", idx)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## When Is Help Available?
+## Wann ist die Hilfe verfügbar?
 
-When a colleague of yours types `help(math)`,
-Python reports an error:
+Wenn ein Kollege von Ihnen `help(math)` tippt, meldet Python einen Fehler:
 
 ```error
 NameError: name 'math' is not defined
 ```
 
-What has your colleague forgotten to do?
+Was hat Ihr Kollege vergessen zu tun?
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-Importing the math module (`import math`)
+Importieren des Mathe-Moduls (`import math`)
 
 
 
@@ -286,13 +298,13 @@ Importing the math module (`import math`)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Importing With Aliases
+## Importieren mit Aliasen
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Rewrite the program so that it uses `import` *without* `as`.
-3. Which form do you find easier to read?
+1. Füllen Sie die Leerzeichen aus, damit das folgende Programm `90.0` ausgibt.
+2. Schreiben Sie das Programm so um, dass es `import` *ohne* `as` verwendet.
+3. Welche Form ist für Sie leichter zu lesen?
 
 ```python
 import math as m
@@ -300,9 +312,9 @@ angle = ____.degrees(____.pi / 2)
 print(____)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 import math as m
@@ -310,7 +322,7 @@ angle = m.degrees(m.pi / 2)
 print(angle)
 ```
 
-can be written as
+kann geschrieben werden als
 
 ```python
 import math
@@ -318,11 +330,11 @@ angle = math.degrees(math.pi / 2)
 print(angle)
 ```
 
-Since you just wrote the code and are familiar with it, you might actually
-find the first version easier to read. But when trying to read a huge piece
-of code written by someone else, or when getting back to your own huge piece
-of code after several months, non-abbreviated names are often easier, except
-where there are clear abbreviation conventions.
+Da Sie den Code gerade erst geschrieben haben und mit ihm vertraut sind, finden Sie die
+erste Version vielleicht sogar einfacher zu lesen. Wenn Sie jedoch versuchen, einen
+umfangreichen Code zu lesen, der von jemand anderem geschrieben wurde, oder wenn Sie
+nach mehreren Monaten zu Ihrem eigenen umfangreichen Code zurückkehren, sind nicht
+abgekürzte Namen oft einfacher, es sei denn, es gibt klare Abkürzungskonventionen.
 
 
 
@@ -330,46 +342,47 @@ where there are clear abbreviation conventions.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## There Are Many Ways To Import Libraries!
+## Es gibt viele Möglichkeiten, Bibliotheken zu importieren!
 
-Match the following print statements with the appropriate library calls.
+Ordnen Sie die folgenden Druckanweisungen den entsprechenden Bibliotheksaufrufen zu.
 
-Print commands:
+Druckbefehle:
 
 1. `print("sin(pi/2) =", sin(pi/2))`
 2. `print("sin(pi/2) =", m.sin(m.pi/2))`
 3. `print("sin(pi/2) =", math.sin(math.pi/2))`
 
-Library calls:
+Bibliotheksaufrufe:
 
 1. `from math import sin, pi`
 2. `import math`
 3. `import math as m`
 4. `from math import *`
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
-1. Library calls 1 and 4. In order to directly refer to `sin` and `pi` without
-  the library name as prefix, you need to use the `from ... import ...`
-  statement. Whereas library call 1 specifically imports the two functions
-  `sin` and `pi`, library call 4 imports all functions in the `math` module.
-2. Library call 3. Here `sin` and `pi` are referred to with a shortened library
-  name `m` instead of `math`. Library call 3 does exactly that using the
-  `import ... as ...` syntax - it creates an alias for `math` in the form of
-  the shortened name `m`.
-3. Library call 2. Here `sin` and `pi` are referred to with the regular library
-  name `math`, so the regular `import ...` call suffices.
+1. Bibliotheksaufrufe 1 und 4. Um direkt auf `sin` und `pi` ohne den Bibliotheksnamen
+   als Präfix zu verweisen, müssen Sie die Anweisung `from ... import ...` verwenden.
+   Während Bibliotheksaufruf 1 speziell die beiden Funktionen `sin` und `pi` importiert,
+   importiert Bibliotheksaufruf 4 alle Funktionen im Modul `math`.
+2. Bibliotheksaufruf 3. Hier werden `sin` und `pi` mit einem verkürzten Bibliotheksnamen
+   `m` anstelle von `math` angesprochen. Bibliotheksaufruf 3 macht genau das mit der
+   Syntax `import ... as ...` - er erzeugt einen Alias für `math` in Form des verkürzten
+   Namens `m`.
+3. Bibliotheksaufruf 2. Hier wird auf `sin` und `pi` mit dem regulären Bibliotheksnamen
+   `math` verwiesen, so dass der reguläre Aufruf `import ...` ausreicht.
 
-**Note:** although library call 4 works, importing all names from a module using a wildcard
-import is [not recommended][pep8-imports] as it makes it unclear which names from the module
-are used in the code. In general it is best to make your imports as specific as possible and to
-only import what your code uses. In library call 1, the `import` statement explicitly tells us
-that the `sin` function is imported from the `math` module, but library call 4 does not
-convey this information.
+**Hinweis:** Obwohl der Bibliotheksaufruf 4 funktioniert, ist es [nicht
+empfohlen][pep8-imports], alle Namen aus einem Modul mit einem Platzhalterimport zu
+importieren, da es dadurch unklar wird, welche Namen aus dem Modul im Code verwendet
+werden. Im Allgemeinen ist es am besten, Ihre Importe so spezifisch wie möglich zu
+gestalten und nur das zu importieren, was Ihr Code verwendet. In Bibliotheksaufruf 1
+sagt uns die Anweisung `import` explizit, dass die Funktion `sin` aus dem Modul `math`
+importiert wird, aber Bibliotheksaufruf 4 vermittelt diese Information nicht.
 
 
 
@@ -377,13 +390,13 @@ convey this information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Importing Specific Items
+## Importieren bestimmter Elemente
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Do you find this version easier to read than preceding ones?
-3. Why *wouldn't* programmers always use this form of `import`?
+1. Füllen Sie die Leerzeichen aus, damit das folgende Programm `90.0` ausgibt.
+2. Finden Sie diese Version leichter zu lesen als die vorhergehenden?
+3. Warum *würden* Programmierer nicht immer diese Form von `import` benutzen?
 
 ```python
 ____ math import ____, ____
@@ -391,9 +404,9 @@ angle = degrees(pi / 2)
 print(angle)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```python
 from math import degrees, pi
@@ -401,11 +414,12 @@ angle = degrees(pi / 2)
 print(angle)
 ```
 
-Most likely you find this version easier to read since it's less dense.
-The main reason not to use this form of import is to avoid name clashes.
-For instance, you wouldn't import `degrees` this way if you also wanted to
-use the name `degrees` for a variable or function of your own. Or if you
-were to also import a function named `degrees` from another library.
+Wahrscheinlich finden Sie diese Version einfacher zu lesen, da sie weniger dicht ist.
+Der Hauptgrund, diese Form des Imports nicht zu verwenden, ist die Vermeidung von
+Namenskonflikten. Sie würden zum Beispiel `degrees` nicht auf diese Weise importieren,
+wenn Sie auch den Namen `degrees` für eine eigene Variable oder Funktion verwenden
+wollten. Oder wenn Sie auch eine Funktion mit dem Namen `degrees` aus einer anderen
+Bibliothek importieren würden.
 
 
 
@@ -413,21 +427,23 @@ were to also import a function named `degrees` from another library.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Reading Error Messages
+## Lesen von Fehlermeldungen
 
-1. Read the code below and try to identify what the errors are without running it.
-2. Run the code, and read the error message. What type of error is it?
+1. Lesen Sie den folgenden Code und versuchen Sie, die Fehler zu erkennen, ohne ihn
+   auszuführen.
+2. Führen Sie den Code aus, und lesen Sie die Fehlermeldung. Um welche Art von Fehler
+   handelt es sich?
 
 ```python
 from math import log
 log(0)
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Lösung
 
 ```output
 ---------------------------------------------------------------------------
@@ -439,13 +455,11 @@ ValueError                                Traceback (most recent call last)
 ValueError: math domain error
 ```
 
-1. The logarithm of `x` is only defined for `x > 0`, so 0 is outside the
-  domain of the function.
-2. You get an error of type `ValueError`, indicating that the function
-  received an inappropriate argument value. The additional message
-  "math domain error" makes it clearer what the problem is.
-  
-  
+1. Der Logarithmus von `x` ist nur für `x > 0` definiert, also liegt 0 außerhalb des
+   Bereichs der Funktion.
+2. Sie erhalten einen Fehler vom Typ `ValueError`, der anzeigt, dass die Funktion einen
+   unpassenden Argumentwert erhalten hat. Die zusätzliche Meldung "math domain error"
+   macht deutlicher, wo das Problem liegt.
 
 :::::::::::::::::::::::::
 
@@ -459,12 +473,14 @@ ValueError: math domain error
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Most of the power of a programming language is in its libraries.
-- A program must import a library module in order to use it.
-- Use `help` to learn about the contents of a library module.
-- Import specific items from a library to shorten programs.
-- Create an alias for a library when importing it to shorten programs.
+- Der größte Teil der Macht einer Programmiersprache liegt in ihren Bibliotheken.
+- Ein Programm muss ein Bibliotheksmodul importieren, um es verwenden zu können.
+- Verwenden Sie `help`, um mehr über den Inhalt eines Bibliotheksmoduls zu erfahren.
+- Importieren Sie bestimmte Elemente aus einer Bibliothek, um Programme zu verkürzen.
+- Erstellen Sie einen Alias für eine Bibliothek, wenn Sie diese importieren, um
+  Programme zu verkürzen.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

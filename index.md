@@ -3,29 +3,31 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-This lesson is an introduction to programming in Python 3 for people with little or no previous
-programming experience. It uses plotting as its motivating example and is designed to be used in
-both [Data Carpentry][dc-lessons] and [Software Carpentry][swc-lessons] workshops.
-This lesson references [JupyterLab][jupyterlab] but can be taught using alternative Python 3 interpreters
-as well (e.g., repl.it, Anaconda).
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+Diese Lektion ist eine Einführung in die Programmierung mit Python 3 für Personen mit
+wenig oder gar keiner Programmiererfahrung. Sie verwendet das Plotten als motivierendes
+Beispiel und kann sowohl in [Data Carpentry][dc-lessons] als auch in [Software
+Carpentry][swc-lessons] Workshops verwendet werden. Diese Lektion bezieht sich auf
+[JupyterLab][jupyterlab], kann aber auch mit anderen Python 3 Interpretern (z.B.
+repl.it, Anaconda) unterrichtet werden.
 
-## Prerequisites
+:::::::::::::::::::::::::::::::::::::::::: prereq
 
-1. Learners need to understand what files and directories are,
-  what a working directory is,
-  and how to start a Python interpreter.
+## Voraussetzungen
 
-2. Learners must install Python 3 before the class starts.
+1. Die Lernenden müssen verstehen, was Dateien und Verzeichnisse sind, was ein
+   Arbeitsverzeichnis ist und wie man einen Python-Interpreter startet.
 
-3. Learners must get the gapminder data before class starts:
-  please download and unzip the file
-  [python-novice-gapminder-data.zip](episodes/files/python-novice-gapminder-data.zip).
+2. Die Lernenden müssen Python 3 installieren, bevor der Kurs beginnt.
 
-Please see [the setup instructions](learners/setup.md)
-for more details.
+3. Die Lernenden müssen die Gapminder-Daten erhalten, bevor der Unterricht beginnt:
+   Bitte laden Sie die Datei
+   [python-novice-gapminder-data.zip](episodes/files/python-novice-gapminder-data.zip)
+   herunter und entpacken Sie sie.
+
+Bitte lesen Sie [die Installationsanweisungen](learners/setup.md) für weitere Details.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 

@@ -1,27 +1,29 @@
 ---
-title: Feedback
+title: Rückmeldung
 teaching: 0
 exercises: 15
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Gather feedback on the class
+- Sammeln Sie Feedback zum Kurs
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How did the class go?
+- Wie ist der Kurs gelaufen?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Gather feedback from participants.
+Sammeln Sie das Feedback der Teilnehmer.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- We are constantly seeking to improve this course.
+- Wir sind ständig bemüht, diesen Kurs zu verbessern.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
