@@ -98,3 +98,13 @@ profiles:
 url: 'https://swcarpentry.github.io/python-novice-gapminder'
 analytics: carpentries
 lang: de
+
+languages:
+  default: Deutsch
+  other:
+    - lang: English
+      url: "https://biont-training.github.io/python-novice-gapminder-en"
+    - lang: "Español"
+      url: "https://biont-training.github.io/python-novice-gapminder-es"
+    - lang: Italiano
+      url: "https://biont-training.github.io/python-novice-gapminder-it"
