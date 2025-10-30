@@ -43,8 +43,7 @@ und betrachten.
 JupyterLab hat mehrere andere praktische Funktionen:
 
 - Sie können problemlos Codeblöcke eingeben, bearbeiten, kopieren und einfügen.
-- Mit der Registerkarte "Vollständig" können Sie leicht auf die Namen der Dinge
-  zugreifen, die Sie verwenden, und mehr über sie erfahren.
+- Mit der Tab-Vervollständigung können Sie ganz einfach auf die Namen der von Ihnen verwendeten Elemente zugreifen und mehr darüber erfahren.
 - Damit können Sie Ihren Code mit Links, Text in verschiedenen Größen,
   Aufzählungszeichen usw. versehen, um ihn für Sie und Ihre Mitarbeiter leichter
   zugänglich zu machen.
@@ -423,62 +422,63 @@ Zelle blau ist). Tippe <kbd>z</kbd>.
 ### Markdown macht das meiste von dem, was HTML macht.
 
 Tabelle: Zeigt eine Markdown-Syntax und ihre gerenderte Ausgabe.
-
 +---------------------------------------+------------------------------------------------+
-| Markdown code                         | Rendered output                                |
+| Markdown-Code                         | Gerenderte Ausgabe                             |
 +=======================================+================================================+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| *   Use asterisks                     | -   Use asterisks                              |
-| *   to create                         | -   to create                                  |
-| *   bullet lists.                     | -   bullet lists.                              |
+| *   Verwende Sternchen                | -   Verwende Sternchen                         |
+| *   um                                | -   um                                          |
+| *   Aufzählungslisten zu erstellen.   | -   Aufzählungslisten zu erstellen.             |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| 1.   Use numbers                      | 1.   Use numbers                               |
-| 1.   to create                        | 2.   to create                                 |
-| 1.   bullet lists.                    | 3.   numbered lists.                           |
+| 1.   Verwende Zahlen                  | 1.   Verwende Zahlen                           |
+| 1.   um                               | 2.   um                                         |
+| 1.   nummerierte Listen zu erstellen. | 3.   nummerierte Listen zu erstellen.           |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| *  You can use indents                | - You can use indents                          |
-|   *  To create sublists               |   - To create sublists                         |
-|   *  of the same type                 |   - of the same type                           |
-| *  Or sublists                        | - Or sublists                                  |
-|   1. Of different                     |   1. Of different                              |
-|   1. types                            |   2. types                                     |
+| *  Du kannst Einrückungen verwenden   | - Du kannst Einrückungen verwenden             |
+|   *  Um Unterlisten zu erstellen      |   - Um Unterlisten zu erstellen                |
+|   *  desselben Typs                   |   - desselben Typs                             |
+| *  Oder Unterlisten                   | - Oder Unterlisten                             |
+|   1. eines anderen                    |   1. eines anderen                             |
+|   1. Typs                             |   2. Typs                                      |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| # A Level-1 Heading                   | ## A Level-1 Heading                           |
+| # Eine Überschrift der Ebene 1        | ## Eine Überschrift der Ebene 1                |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| ## A Level-2 Heading (etc.)           | ### A Level-2 Heading (etc.)                   |
+| ## Eine Überschrift der Ebene 2 (usw.)| ### Eine Überschrift der Ebene 2 (usw.)        |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
-| Line breaks                           | Line breaks                                    |
-| don't matter.                         | don't matter.                                  |
+| Zeilenumbrüche                        | Zeilenumbrüche                                 |
+| spielen keine Rolle.                  | spielen keine Rolle.                           |
 |                                       |                                                |
-| But blank lines                       | But blank lines                                |
-| create new paragraphs.                | create new paragraphs.                         |
+| Aber Leerzeilen                       | Aber Leerzeilen                                |
+| erzeugen neue Absätze.                | erzeugen neue Absätze.                         |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
 | [Links](http://software-carpentry.org)| [Links](https://software-carpentry.org)        |
-| are created with `[...](...)`.        | are created with `[...](...)`.                 |
-| Or use [named links][data-carp].      | Or use [named links][data_carpentry].          |
+| werden mit `[...](...)` erstellt.     | werden mit `[...](...)` erstellt.              |
+| Oder verwende [benannte Links][data-carp]. | Oder verwende [benannte Links][data_carpentry]. |
 |                                       |                                                |
 | [data-carp]: http://datacarpentry.org |                                                |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
+
+
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
