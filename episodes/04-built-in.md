@@ -137,13 +137,13 @@ round(3.712, 1)
   doppelte Unterstriche gekennzeichnet.
 
 ```python
-my_string = 'Hello world!'  # creation of a string object 
+my_string = 'Hello world!'  # Erstellung eines String-Objekts
 
-print(len(my_string))       # the len function takes a string as an argument and returns the length of the string
+print(len(my_string))       # Die Funktion len nimmt eine Zeichenkette als Argument und gibt die Länge der Zeichenkette zurück
 
-print(my_string.swapcase()) # calling the swapcase method on the my_string object
+print(my_string.swapcase()) # Aufruf der swapcase-Methode für das Objekt my_string
 
-print(my_string.__len__())  # calling the internal __len__ method on the my_string object, used by len(my_string)
+print(my_string.__len__())  # Aufruf der internen Methode __len__ für das Objekt my_string, verwendet von len(my_string)
 
 ```
 
@@ -156,10 +156,10 @@ hELLO WORLD!
 - Man kann sie sogar aneinandergereiht sehen. Sie arbeiten von links nach rechts.
 
 ```python
-print(my_string.isupper())          # Not all the letters are uppercase
-print(my_string.upper())            # This capitalizes all the letters
+print(my_string.isupper())          # Nicht alle Buchstaben sind Großbuchstaben
+print(my_string.upper())            # Dadurch werden alle Buchstaben großgeschrieben
 
-print(my_string.upper().isupper())  # Now all the letters are uppercase
+print(my_string.upper().isupper())  # Jetzt sind alle Buchstaben groß geschrieben
 ```
 
 ```output
