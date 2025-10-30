@@ -143,7 +143,7 @@ cos(pi) is -1.0
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Erforschung des Math-Moduls
+## Inspizieren des Math-Moduls
 
 1. Welche Funktion aus dem Modul `math` können Sie verwenden, um eine Quadratwurzel
    *ohne* Verwendung von `sqrt` zu berechnen?
