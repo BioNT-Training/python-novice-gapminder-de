@@ -2679,7 +2679,7 @@ wird.</li>
 </div>
 </section></section><section id="aio-04-built-in"><p>Content from <a href="04-built-in.html">Eingebaute Funktionen und Hilfe</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-03-02 |
+<p>Zuletzt aktualisiert am 2025-10-30 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/04-built-in.md" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Geschätzte Zeit: <i aria-hidden="true" data-feather="clock"></i> 25 Minuten</p>
@@ -2890,13 +2890,13 @@ sind durch doppelte Unterstriche gekennzeichnet.</li>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>  <span class="co"># creation of a string object </span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>  <span class="co"># Erstellung eines String-Objekts</span></span>
 <span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(my_string))       <span class="co"># the len function takes a string as an argument and returns the length of the string</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(my_string))       <span class="co"># Die Funktion len nimmt eine Zeichenkette als Argument und gibt die Länge der Zeichenkette zurück</span></span>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="bu">print</span>(my_string.swapcase()) <span class="co"># calling the swapcase method on the my_string object</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="bu">print</span>(my_string.swapcase()) <span class="co"># Aufruf der swapcase-Methode für das Objekt my_string</span></span>
 <span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="bu">print</span>(my_string.<span class="fu">__len__</span>())  <span class="co"># calling the internal __len__ method on the my_string object, used by len(my_string)</span></span></code></pre>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="bu">print</span>(my_string.<span class="fu">__len__</span>())  <span class="co"># Aufruf der internen Methode __len__ für das Objekt my_string, verwendet von len(my_string)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2912,10 +2912,10 @@ nach rechts.</li>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(my_string.isupper())          <span class="co"># Not all the letters are uppercase</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(my_string.upper())            <span class="co"># This capitalizes all the letters</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(my_string.isupper())          <span class="co"># Nicht alle Buchstaben sind Großbuchstaben</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(my_string.upper())            <span class="co"># Dadurch werden alle Buchstaben großgeschrieben</span></span>
 <span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="bu">print</span>(my_string.upper().isupper())  <span class="co"># Now all the letters are uppercase</span></span></code></pre>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="bu">print</span>(my_string.upper().isupper())  <span class="co"># Jetzt sind alle Buchstaben groß geschrieben</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4335,7 +4335,7 @@ Statistik an.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Um eine CSV-Datei einzulesen, verwenden wir <code>pd.read_csv</code>
 und übergeben ihr den Dateinamen
@@ -4383,7 +4383,7 @@ Daten ändern.)</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Wir können uns die ersten fünf Zeilen von <code>data_americas</code>
@@ -4526,7 +4526,7 @@ lesen?</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Wir müssen den Pfad zu der Datei, die uns interessiert, in dem Aufruf
 von <code>pd.read_csv</code> angeben. Zunächst müssen wir mit “../” aus
@@ -4567,7 +4567,7 @@ man <code>to_csv</code> benutzt.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Um den DataFrame <code>data_americas</code> in eine Datei mit dem
 Namen <code>processed.csv</code> zu schreiben, führen Sie den folgenden
@@ -5887,7 +5887,7 @@ darzustellen.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5925,7 +5925,7 @@ Welche Beziehung sehen Sie (wenn überhaupt)?</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5971,7 +5971,7 @@ und Maximum an:</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <figure><img src="../fig/9_correlations_solution2.png" alt="Korrelationen Lösung 2" class="figure mx-auto d-block"></figure><p>Es scheint, dass die Schwankungen in diesem Wert auf einen starken
 Rückgang nach 1972 zurückzuführen sind. Vielleicht sind geopolitische
@@ -6013,7 +6013,7 @@ einzelnen Argumente von <code>plot</code> bewirken.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <figure><img src="../fig/9_more_correlations_solution.svg" alt="More Correlations Solution" class="figure mx-auto d-block"></figure><p>Eine gute Anlaufstelle ist die Dokumentation für die Plot-Funktion -
 help(data_all.plot).</p>
@@ -6485,7 +6485,7 @@ second time: [3, 5]</code></pre>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6523,7 +6523,7 @@ ganze Zahlen sind, wie lang ist die Liste
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Die Liste <code>values[start:stop]</code> hat bis zu
 <code>stop - start</code> Elemente. Zum Beispiel hat
@@ -6572,7 +6572,7 @@ list to string: gold</code></pre>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -6627,7 +6627,7 @@ Indizierung kombinieren.)</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Das Programm gibt <code>m</code> aus.</p>
 <ol style="list-style-type: decimal">
@@ -6678,7 +6678,7 @@ Sammlung auswählen?</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>Das Programm druckt</p>
 <div class="codewrapper sourceCode" id="cb27">
@@ -6727,7 +6727,7 @@ zweite Element aus).</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6779,7 +6779,7 @@ Worten den Unterschied zwischen <code>sorted(letters)</code> und
   Lösung
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Programm A druckt</p>
 <div class="codewrapper">
@@ -6841,7 +6841,7 @@ Worten den Unterschied zwischen <code>new = old</code> und
   Lösung
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>Programm A druckt</p>
 <div class="codewrapper">
@@ -8462,7 +8462,7 @@ Korrektheit ist.</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>1 wird vom glob nicht gefunden.</p>
 </div>
@@ -8503,7 +8503,7 @@ und Spalten des Datenrahmens zurückgibt.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -8552,7 +8552,7 @@ anweisen, sie zu ignorieren.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Diese Lösung erstellt eine nützliche Legende, indem sie die <a href="https://docs.python.org/3/library/stdtypes.html#str.split" class="external-link">string
 <code>split</code> method</a> verwendet, um die <code>region</code> aus
@@ -8939,7 +8939,7 @@ haben.</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -8980,7 +8980,7 @@ haben.</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -9057,7 +9057,7 @@ result of call is: None</code></pre>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Das Problem bei diesem Beispiel ist, dass die Funktion
@@ -9111,7 +9111,7 @@ zurückgibt.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -9156,7 +9156,7 @@ ist, wenn die Liste keine negativen Zahlen enthält?</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -9224,7 +9224,7 @@ aufzurufen?</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>2003/2/1</code></li>
@@ -9319,7 +9319,7 @@ berücksichtigen. Eine Beispielausgabe könnte
   Lösung
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -9405,7 +9405,7 @@ anstatt sie im Code aufzuzählen)</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Das durchschnittliche BIP für Japan über die Jahre, die für die
@@ -9521,7 +9521,7 @@ Zustand?</p></li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 </li></ol>
