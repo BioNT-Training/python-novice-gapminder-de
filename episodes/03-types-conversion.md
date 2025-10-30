@@ -134,7 +134,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: object of type 'int' has no len()
 ```
 
-## Muss Zahlen in Zeichenketten umwandeln oder umgekehrt, wenn er mit ihnen operiert. {#Zahlen-und-Zeichenketten-umwandeln}
+## Bei der Verarbeitung von Zahlen müssen diese in Zeichenfolgen umgewandelt werden oder umgekehrt. {#Zahlen-und-Zeichenketten-umwandeln}
 
 - Kann keine Zahlen und Strings addieren.
 
@@ -344,7 +344,7 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Strings to Numbers
+## Zeichenketten in Zahlen umwandeln
 
 Wo es sinnvoll ist, konvertiert `float()` einen String in eine Fließkommazahl und
 `int()` konvertiert eine Fließkommazahl in eine Ganzzahl:
