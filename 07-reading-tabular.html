@@ -264,11 +264,11 @@
 tabellarische Daten zu erstellen.</a></li>
 <li><a href="#verwenden-sie-index_col-um-anzugeben-dass-die-werte-einer-spalte-als-zeilen%C3%BCberschriften-verwendet-werden-sollen.">Verwenden Sie <code>index_col</code>, um anzugeben, dass die Werte
 einer Spalte als Zeilenüberschriften verwendet werden sollen.</a></li>
-<li><a href="#verwenden-sie-die-methode-dataframe.info-um-mehr-%C3%BCber-einen-datenrahmen-herauszufinden.">Verwenden Sie die Methode <code>DataFrame.info()</code>, um mehr
-über einen Datenrahmen herauszufinden.</a></li>
-<li><a href="#die-variable-dataframe.columns-speichert-informationen-%C3%BCber-die-spalten-des-datenrahmens.">Die Variable <code>DataFrame.columns</code> speichert Informationen
-über die Spalten des Datenrahmens.</a></li>
-<li><a href="#verwenden-sie-dataframe.t-um-einen-datenrahmen-zu-transponieren.">Verwenden Sie <code>DataFrame.T</code>, um einen Datenrahmen zu
+<li><a href="#verwenden-sie-die-methode-dataframe.info-um-mehr-%C3%BCber-einen-dataframe-herauszufinden.">Verwenden Sie die Methode <code>DataFrame.info()</code>, um mehr
+über einen DataFrame herauszufinden.</a></li>
+<li><a href="#die-variable-dataframe.columns-speichert-informationen-%C3%BCber-die-spalten-des-dataframes.">Die Variable <code>DataFrame.columns</code> speichert Informationen
+über die Spalten des DataFrames.</a></li>
+<li><a href="#verwenden-sie-dataframe.t-um-einen-dataframe-zu-transponieren.">Verwenden Sie <code>DataFrame.T</code>, um einen DataFrame zu
 transponieren.</a></li>
 <li><a href="#verwenden-sie-dataframe.describe-um-zusammenfassende-statistiken-%C3%BCber-daten-zu-erhalten.">Verwenden Sie <code>DataFrame.describe()</code>, um zusammenfassende
 Statistiken über Daten zu erhalten.</a></li>
@@ -453,7 +453,7 @@ Statistiken über Daten zu erhalten.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tabellarische Daten in DataFrames einlesen</h1>
-        <p>Zuletzt aktualisiert am 2025-03-02 |
+        <p>Zuletzt aktualisiert am 2025-10-31 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/07-reading-tabular.md" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -506,7 +506,7 @@ Pandas-Bibliothek zu verweisen.</li>
 <li>Einlesen einer CSV-Datendatei (Comma Separated Values) mit
 <code>pd.read_csv</code>.
 <ul><li>Argument ist der Name der zu lesenden Datei.</li>
-<li>Gibt einen Datenrahmen zurück, den Sie einer Variablen zuweisen
+<li>Gibt einen DataFrame zurück, den Sie einer Variablen zuweisen
 können</li>
 </ul></li>
 </ul><div class="codewrapper sourceCode" id="cb1">
@@ -536,15 +536,15 @@ können</li>
 0     34435.36744
 1     25185.00911</code></pre>
 </div>
-<ul><li>Die Spalten in einem Datenrahmen sind die beobachteten Variablen und
+<ul><li>Die Spalten in einem DataFrame sind die beobachteten Variablen und
 die Zeilen die Beobachtungen.</li>
 <li>Pandas verwendet den Backslash <code>\</code>, um umbrochene Zeilen
 anzuzeigen, wenn die Ausgabe zu breit ist, um auf den Bildschirm zu
 passen.</li>
-<li>Die Verwendung von beschreibenden Namen für Datenrahmen hilft uns,
-zwischen mehreren Datenrahmen zu unterscheiden, damit wir nicht
-versehentlich einen Datenrahmen überschreiben oder aus dem falschen
-Datenrahmen lesen.</li>
+<li>Die Verwendung von beschreibenden Namen für DataFrame hilft uns,
+zwischen mehreren DataFrame zu unterscheiden, damit wir nicht
+versehentlich einen DataFrame überschreiben oder aus dem falschen
+DataFrame lesen.</li>
 </ul><div id="datei-nicht-gefunden" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -573,9 +573,9 @@ einer Spalte als Zeilenüberschriften verwendet werden sollen.<a class="anchor" 
 <li>Möchte wirklich nach Ländern indexieren.</li>
 <li>Übergeben Sie dazu den Namen der Spalte an den Parameter
 <code>read_csv</code> als <code>index_col</code>.</li>
-<li>Die Benennung des Datenrahmens <code>data_oceania_country</code>
-sagt uns, welche Region die Daten umfassen (<code>oceania</code>) und
-wie sie indiziert sind (<code>country</code>).</li>
+<li>Die Benennung des DataFrames <code>data_oceania_country</code> sagt
+uns, welche Region die Daten umfassen (<code>oceania</code>) und wie sie
+indiziert sind (<code>country</code>).</li>
 </ul><div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -600,8 +600,8 @@ country
 Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="verwenden-sie-die-methode-dataframe-info-um-mehr-über-einen-datenrahmen-herauszufinden-">Verwenden Sie die Methode <code>DataFrame.info()</code>, um mehr
-über einen Datenrahmen herauszufinden.<a class="anchor" aria-label="anchor" href="#verwenden-sie-die-methode-dataframe-info-um-mehr-%C3%BCber-einen-datenrahmen-herauszufinden-"></a></h2>
+</section><section><h2 class="section-heading" id="verwenden-sie-die-methode-dataframe-info-um-mehr-über-einen-dataframe-herauszufinden-">Verwenden Sie die Methode <code>DataFrame.info()</code>, um mehr
+über einen DataFrame herauszufinden.<a class="anchor" aria-label="anchor" href="#verwenden-sie-die-methode-dataframe-info-um-mehr-%C3%BCber-einen-dataframe-herauszufinden-"></a></h2>
 <hr class="half-width"><div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -639,8 +639,8 @@ memory usage: 208.0+ bytes</code></pre>
 fehlender Beobachtungen verwendet werden.</li>
 </ul></li>
 <li>Benötigt 208 Bytes Speicherplatz.</li>
-</ul></section><section><h2 class="section-heading" id="die-variable-dataframe-columns-speichert-informationen-über-die-spalten-des-datenrahmens-">Die Variable <code>DataFrame.columns</code> speichert Informationen
-über die Spalten des Datenrahmens.<a class="anchor" aria-label="anchor" href="#die-variable-dataframe-columns-speichert-informationen-%C3%BCber-die-spalten-des-datenrahmens-"></a></h2>
+</ul></section><section><h2 class="section-heading" id="die-variable-dataframe-columns-speichert-informationen-über-die-spalten-des-dataframes-">Die Variable <code>DataFrame.columns</code> speichert Informationen
+über die Spalten des DataFrames.<a class="anchor" aria-label="anchor" href="#die-variable-dataframe-columns-speichert-informationen-%C3%BCber-die-spalten-des-dataframes-"></a></h2>
 <hr class="half-width"><ul><li>Beachten Sie, dass es sich hierbei um Daten und <em>nicht</em> um
 eine Methode handelt. (Es hat keine Klammern.)
 <ul><li>Wie <code>math.pi</code>.</li>
@@ -662,8 +662,8 @@ bezeichnet.</li>
        'gdpPercap_1992', 'gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007'],
       dtype='object')</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="verwenden-sie-dataframe-t-um-einen-datenrahmen-zu-transponieren-">Verwenden Sie <code>DataFrame.T</code>, um einen Datenrahmen zu
-transponieren.<a class="anchor" aria-label="anchor" href="#verwenden-sie-dataframe-t-um-einen-datenrahmen-zu-transponieren-"></a></h2>
+</section><section><h2 class="section-heading" id="verwenden-sie-dataframe-t-um-einen-dataframe-zu-transponieren-">Verwenden Sie <code>DataFrame.T</code>, um einen DataFrame zu
+transponieren.<a class="anchor" aria-label="anchor" href="#verwenden-sie-dataframe-t-um-einen-dataframe-zu-transponieren-"></a></h2>
 <hr class="half-width"><ul><li>Manchmal möchte man Spalten als Zeilen behandeln und umgekehrt.</li>
 <li>Transponieren (geschrieben <code>.T</code>) kopiert die Daten nicht,
 sondern ändert nur die Sichtweise des Programms darauf.</li>
@@ -759,7 +759,7 @@ Statistik an.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Um eine CSV-Datei einzulesen, verwenden wir <code>pd.read_csv</code>
 und übergeben ihr den Dateinamen
@@ -805,7 +805,7 @@ Daten ändern.)</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Wir können uns die ersten fünf Zeilen von <code>data_americas</code>
 ansehen, indem wir <code>data_americas.head()</code> ausführen, wodurch
@@ -944,7 +944,7 @@ lesen?</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Wir müssen den Pfad zu der Datei, die uns interessiert, in dem Aufruf
 von <code>pd.read_csv</code> angeben. Zunächst müssen wir mit “../” aus
@@ -970,9 +970,9 @@ dem Ordner <code>thesis</code> und dann mit “field_data/” in den Ordner
 <div class="callout-content">
 <p>Neben der Funktion <code>read_csv</code> zum Lesen von Daten aus
 einer Datei, bietet Pandas eine Funktion <code>to_csv</code> zum
-Schreiben von Datenrahmen in Dateien. Wenden Sie an, was Sie über das
-Lesen von Dateien gelernt haben, und schreiben Sie einen Ihrer
-Datenrahmen in eine Datei namens <code>processed.csv</code>. Du kannst
+Schreiben von DataFrame in Dateien. Wenden Sie an, was Sie über das
+Lesen von Dateien gelernt haben, und schreiben Sie einen Ihrer DataFrame
+in eine Datei namens <code>processed.csv</code>. Du kannst
 <code>help</code> benutzen, um Informationen darüber zu bekommen, wie
 man <code>to_csv</code> benutzt.</p>
 </div>
@@ -985,7 +985,7 @@ man <code>to_csv</code> benutzt.</p>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Um den DataFrame <code>data_americas</code> in eine Datei mit dem
 Namen <code>processed.csv</code> zu schreiben, führen Sie den folgenden
@@ -1026,10 +1026,10 @@ tabellarischen Daten zu erhalten.</li>
 <li>Verwenden Sie <code>index_col</code>, um anzugeben, daß die Werte
 einer Spalte als Zeilenüberschriften verwendet werden sollen.</li>
 <li>Verwenden Sie <code>DataFrame.info</code>, um mehr über einen
-Datenrahmen herauszufinden.</li>
+DataFrame herauszufinden.</li>
 <li>Die Variable <code>DataFrame.columns</code> speichert Informationen
-über die Spalten des Datenrahmens.</li>
-<li>Verwenden Sie <code>DataFrame.T</code>, um einen Datenrahmen zu
+über die Spalten des DataFrames.</li>
+<li>Verwenden Sie <code>DataFrame.T</code>, um einen DataFrame zu
 transponieren.</li>
 <li>Verwenden Sie <code>DataFrame.describe</code>, um zusammenfassende
 Statistiken über Daten zu erhalten.</li>
@@ -1094,7 +1094,7 @@ Statistiken über Daten zu erhalten.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-03-02",
+  "dateModified": "2025-10-31",
   "datePublished": "2025-10-31"
 }
 
