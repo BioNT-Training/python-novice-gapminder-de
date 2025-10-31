@@ -57,7 +57,7 @@ interaktive Python-Sitzung, die von einem Terminal aus gestartet wird, oder ein
 Python-Skript, das über die Kommandozeile ausgeführt wird, erfordern jedoch einen
 zusätzlichen Befehl, um die Abbildung anzuzeigen.
 
-Weist `matplotlib` an, eine Figur darzustellen:
+Weist `matplotlib` an, eine Abbildung darzustellen:
 
 ```python
 plt.show()
@@ -361,9 +361,9 @@ speichert die aktuelle Abbildung in der Datei `my_figure.png`. Das Dateiformat w
 automatisch aus der Dateinamenerweiterung abgeleitet (andere Formate sind pdf, ps, eps
 und svg).
 
-Beachten Sie, dass die Funktionen in `plt` auf eine globale Figurvariable verweisen.
-Nachdem eine Figur auf dem Bildschirm angezeigt wurde (z.B. mit `plt.show`), wird
-matplotlib diese Variable auf eine neue leere Figur verweisen lassen. Stellen Sie daher
+Beachten Sie, dass die Funktionen in `plt` auf eine globale Abbildungvariable verweisen.
+Nachdem eine Abbildung auf dem Bildschirm angezeigt wurde (z.B. mit `plt.show`), wird
+matplotlib diese Variable auf eine neue leere Abbildung verweisen lassen. Stellen Sie daher
 sicher, dass Sie `plt.savefig` aufrufen, bevor der Plot auf dem Bildschirm angezeigt
 wird, sonst könnten Sie eine Datei mit einem leeren Plot vorfinden.
 
@@ -375,8 +375,8 @@ Abbildung in einer Datei zu speichern.
 
 ```python
 data.plot(kind='bar')
-fig = plt.gcf() # get current figure
-fig.savefig('my_figure.png')
+fig = plt.gcf() # get current Abbildunge
+fig.savefig('my_Abbildunge.png')
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
