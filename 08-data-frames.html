@@ -456,7 +456,7 @@ werden.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pandas DatenFrames</h1>
-        <p>Zuletzt aktualisiert am 2025-03-02 |
+        <p>Zuletzt aktualisiert am 2025-10-31 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/08-data-frames.md" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -484,12 +484,11 @@ durchführen?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Ziele</h3>
-<ul><li>Wähle einzelne Werte aus einem Pandas-Datenrahmen aus.</li>
-<li>Wähle ganze Zeilen oder ganze Spalten aus einem Datenrahmen
-aus.</li>
+<ul><li>Wähle einzelne Werte aus einem Pandas-DataFrame aus.</li>
+<li>Wähle ganze Zeilen oder ganze Spalten aus einem DataFrame aus.</li>
 <li>Wählen Sie in einer einzigen Operation eine Teilmenge von Zeilen und
-Spalten aus einem Datenrahmen aus.</li>
-<li>Wählen Sie eine Teilmenge eines Datenrahmens anhand eines einzigen
+Spalten aus einem DataFrame aus.</li>
+<li>Wählen Sie eine Teilmenge eines DataFrames anhand eines einzigen
 booleschen Kriteriums aus.</li>
 </ul></div>
 </div>
@@ -622,7 +621,7 @@ letzten Index, aber nicht einschließlich, anzeigt.</p>
 </section><section><h2 class="section-heading" id="das-ergebnis-der-zerlegung-kann-in-weiteren-operationen-verwendet-werden-">Das Ergebnis der Zerlegung kann in weiteren Operationen verwendet
 werden.<a class="anchor" aria-label="anchor" href="#das-ergebnis-der-zerlegung-kann-in-weiteren-operationen-verwendet-werden-"></a></h2>
 <hr class="half-width"><ul><li>Normalerweise druckt man nicht nur einen Ausschnitt.</li>
-<li>Alle statistischen Operatoren, die auf ganze Datenrahmen angewendet
+<li>Alle statistischen Operatoren, die auf ganze DataFrame angewendet
 werden, funktionieren auf die gleiche Weise auf Slices.</li>
 <li>Berechne z.B. den Maximalwert eines Slice.</li>
 </ul><div class="codewrapper sourceCode" id="cb11">
@@ -653,7 +652,7 @@ dtype: float64</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="verwende-vergleiche-um-daten-nach-ihrem-wert-auszuwählen-">Verwende Vergleiche, um Daten nach ihrem Wert auszuwählen.<a class="anchor" aria-label="anchor" href="#verwende-vergleiche-um-daten-nach-ihrem-wert-auszuw%C3%A4hlen-"></a></h2>
 <hr class="half-width"><ul><li>Der Vergleich wird Element für Element durchgeführt.</li>
-<li>Gibt einen ähnlich geformten Datenrahmen von <code>True</code> und
+<li>Gibt einen ähnlich geformten DataFrame von <code>True</code> und
 <code>False</code> zurück.</li>
 </ul><div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -842,7 +841,7 @@ Gapminder-BIP-Daten für Europa wurden geladen:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Die Auswahl kann mit Hilfe der Beschriftungen sowohl der Zeile
 (“Serbien”) als auch der Spalte (“gdpPercap_2007”) vorgenommen
@@ -887,7 +886,7 @@ Slices in Pandas enthalten ist (oder nicht)?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Nein, sie erzeugen nicht die gleiche Ausgabe! Die Ausgabe der ersten
 Anweisung ist:</p>
@@ -948,7 +947,7 @@ steht in <code>first</code>, <code>second</code>, usw.?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Lösung </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Gehen wir diesen Teil des Codes Zeile für Zeile durch.</p>
 <div class="codewrapper sourceCode" id="cb32">
@@ -957,9 +956,9 @@ steht in <code>first</code>, <code>second</code>, usw.?</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>first <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span></code></pre>
 </div>
 <p>Diese Zeile lädt den Datensatz mit den BIP-Daten aller Länder in
-einen Datenrahmen mit der Bezeichnung <code>first</code>. Der Parameter
+einen DataFrame mit der Bezeichnung <code>first</code>. Der Parameter
 <code>index_col='country'</code> wählt aus, welche Spalte als
-Zeilenbeschriftung im Datenrahmen verwendet werden soll.</p>
+Zeilenbeschriftung im DataFrame verwendet werden soll.</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -980,8 +979,8 @@ Ausdruck zunächst einer Variablen zu)</p>
 </div>
 <p>Wie die Syntax vermuten lässt, wird in dieser Zeile die Zeile von
 <code>second</code> mit der Bezeichnung “Puerto Rico” gelöscht. Der
-resultierende Datenrahmen <code>third</code> hat eine Zeile weniger als
-der ursprüngliche Datenrahmen <code>second</code>.</p>
+resultierende DataFrame <code>third</code> hat eine Zeile weniger als
+der ursprüngliche DataFrame <code>second</code>.</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1032,7 +1031,7 @@ Sie diese Methoden verwenden?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Lösung </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Für jede Spalte in <code>data</code> gibt <code>idxmin</code> den
 Indexwert zurück, der dem Minimum jeder Spalte entspricht;
@@ -1069,7 +1068,7 @@ Pro-Kopf-BIP für dieses Land im Jahr 1952.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Lösung </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>1:</p>
 <div class="codewrapper sourceCode" id="cb38">
@@ -1133,7 +1132,7 @@ Operationen mit einem DataFrame durchzuführen:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Lösung </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>1. Zugriff auf eine einzelne Spalte:</p>
 <div class="codewrapper sourceCode" id="cb42">
@@ -1181,28 +1180,28 @@ Operationen mit einem DataFrame durchzuführen:</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="co"># by column/row names</span></span>
-<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a>data[<span class="st">"column_name"</span>][<span class="st">"row_name"</span>]         <span class="co"># as a Series</span></span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a>data[<span class="st">"column_name"</span>][<span class="st">"row_name"</span>]         <span class="co"># als Series</span></span>
 <span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[<span class="st">"row_name"</span>]  <span class="co"># as a Series</span></span>
-<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[<span class="st">"row_name"</span>]  <span class="co"># als Series</span></span>
+<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># als DataFrame</span></span>
 <span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a></span>
-<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>][<span class="st">"col_name"</span>]  <span class="co"># as a value</span></span>
-<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][<span class="st">"col_name"</span>]  <span class="co"># as a Series</span></span>
-<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][[<span class="st">"col_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>][<span class="st">"col_name"</span>]  <span class="co"># als Wert</span></span>
+<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][<span class="st">"col_name"</span>]  <span class="co"># als Series</span></span>
+<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][[<span class="st">"col_name"</span>]]  <span class="co"># als DataFrame</span></span>
 <span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a></span>
-<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, <span class="st">"col_name"</span>]  <span class="co"># as a value</span></span>
-<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], <span class="st">"col_name"</span>]  <span class="co"># as a Series. Preserves index. Column name is moved to `.name`.</span></span>
-<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, [<span class="st">"col_name"</span>]]  <span class="co"># as a Series. Index is moved to `.name.` Sets index to column name.</span></span>
-<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], [<span class="st">"col_name"</span>]]  <span class="co"># as a DataFrame (preserves original index and column name)</span></span>
+<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, <span class="st">"col_name"</span>]  <span class="co"># als Wert</span></span>
+<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], <span class="st">"col_name"</span>]  <span class="co">#  Series. Behält den Index bei. Der Spaltenname wird nach `.name` verschoben.</span></span>
+<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, [<span class="st">"col_name"</span>]]  <span class="co"># als Series. Der Index wird nach „.name.“ verschoben. Setzt den Index auf den Spaltennamen.</span></span>
+<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], [<span class="st">"col_name"</span>]]  <span class="co"># als DataFrame (behält den ursprünglichen Index und Spaltennamen bei)</span></span>
 <span id="cb44-15"><a href="#cb44-15" tabindex="-1"></a></span>
 <span id="cb44-16"><a href="#cb44-16" tabindex="-1"></a><span class="co"># by column/row names: Dot notation</span></span>
 <span id="cb44-17"><a href="#cb44-17" tabindex="-1"></a>data.col_name.row_name</span>
 <span id="cb44-18"><a href="#cb44-18" tabindex="-1"></a></span>
 <span id="cb44-19"><a href="#cb44-19" tabindex="-1"></a><span class="co"># by column/row indices</span></span>
-<span id="cb44-20"><a href="#cb44-20" tabindex="-1"></a>data.iloc[row_index, col_index] <span class="co"># as a value</span></span>
-<span id="cb44-21"><a href="#cb44-21" tabindex="-1"></a>data.iloc[[row_index], col_index] <span class="co"># as a Series. Preserves index. Column name is moved to `.name`</span></span>
-<span id="cb44-22"><a href="#cb44-22" tabindex="-1"></a>data.iloc[row_index, [col_index]] <span class="co"># as a Series. Index is moved to `.name.` Sets index to column name.</span></span>
-<span id="cb44-23"><a href="#cb44-23" tabindex="-1"></a>data.iloc[[row_index], [col_index]] <span class="co"># as a DataFrame (preserves original index and column name)</span></span>
+<span id="cb44-20"><a href="#cb44-20" tabindex="-1"></a>data.iloc[row_index, col_index] <span class="co"># als Wert</span></span>
+<span id="cb44-21"><a href="#cb44-21" tabindex="-1"></a>data.iloc[[row_index], col_index] <span class="co"># #  Series. Behält den Index bei. Der Spaltenname wird nach `.name` verschoben.</span></span>
+<span id="cb44-22"><a href="#cb44-22" tabindex="-1"></a>data.iloc[row_index, [col_index]] <span class="co"># als Series. Der Index wird nach „.name.“ verschoben. Setzt den Index auf den Spaltennamen.</span></span>
+<span id="cb44-23"><a href="#cb44-23" tabindex="-1"></a>data.iloc[[row_index], [col_index]] <span class="co">#  # als DataFrame (behält den ursprünglichen Index und Spaltennamen bei)</span></span>
 <span id="cb44-24"><a href="#cb44-24" tabindex="-1"></a></span>
 <span id="cb44-25"><a href="#cb44-25" tabindex="-1"></a><span class="co"># column name + row index</span></span>
 <span id="cb44-26"><a href="#cb44-26" tabindex="-1"></a>data[<span class="st">"col_name"</span>][row_index]</span>
@@ -1210,8 +1209,8 @@ Operationen mit einem DataFrame durchzuführen:</p>
 <span id="cb44-28"><a href="#cb44-28" tabindex="-1"></a>data[<span class="st">"col_name"</span>].iloc[row_index]</span>
 <span id="cb44-29"><a href="#cb44-29" tabindex="-1"></a></span>
 <span id="cb44-30"><a href="#cb44-30" tabindex="-1"></a><span class="co"># column index + row name</span></span>
-<span id="cb44-31"><a href="#cb44-31" tabindex="-1"></a>data.iloc[:, [col_index]].loc[<span class="st">"row_name"</span>]  <span class="co"># as a Series</span></span>
-<span id="cb44-32"><a href="#cb44-32" tabindex="-1"></a>data.iloc[:, [col_index]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb44-31"><a href="#cb44-31" tabindex="-1"></a>data.iloc[:, [col_index]].loc[<span class="st">"row_name"</span>]  <span class="co"># alsSeries</span></span>
+<span id="cb44-32"><a href="#cb44-32" tabindex="-1"></a>data.iloc[:, [col_index]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># als DataFrame</span></span>
 <span id="cb44-33"><a href="#cb44-33" tabindex="-1"></a></span>
 <span id="cb44-34"><a href="#cb44-34" tabindex="-1"></a><span class="co"># using masks</span></span>
 <span id="cb44-35"><a href="#cb44-35" tabindex="-1"></a>data[data.index <span class="op">==</span> <span class="st">"row_name"</span>].T[data.T.index <span class="op">==</span> <span class="st">"col_name"</span>].T</span></code></pre>
@@ -1257,10 +1256,10 @@ Operationen mit einem DataFrame durchzuführen:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="co"># by name</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="co"># nach Namen</span></span>
 <span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>data.loc[<span class="st">"row1"</span>:<span class="st">"row2"</span>, <span class="st">"col1"</span>:<span class="st">"col2"</span>]</span>
 <span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a></span>
-<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a><span class="co"># by index</span></span>
+<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a><span class="co"># nach index</span></span>
 <span id="cb48-5"><a href="#cb48-5" tabindex="-1"></a>data.iloc[row1_index:row2_index, col1_index:col2_index]</span>
 <span id="cb48-6"><a href="#cb48-6" tabindex="-1"></a></span>
 <span id="cb48-7"><a href="#cb48-7" tabindex="-1"></a><span class="co"># column names + row indices</span></span>
@@ -1291,7 +1290,7 @@ verfügbar sind, wenn wir <code>dir()</code> benutzen:</p>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># creation of a string object </span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># Erstellen eines String-Objekts</span></span>
 <span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="bu">dir</span>(my_string)</span></code></pre>
 </div>
 <p>Dieser Befehl gibt zurück:</p>
@@ -1324,7 +1323,7 @@ Informationen verfügbar sind, ausgibt.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Lösung </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Unter vielen Auswahlmöglichkeiten wird in <code>dir()</code> die
 Funktion <code>median()</code> als Möglichkeit aufgeführt. Also,</p>
@@ -1430,8 +1429,8 @@ werden.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-03-02",
-  "datePublished": "2025-10-30"
+  "dateModified": "2025-10-31",
+  "datePublished": "2025-10-31"
 }
 
   </script><script>
