@@ -210,24 +210,24 @@ import matplotlib.pyplot as plt
 fig, ax = plt.subplots(1,1)
 for filename in glob.glob('data/gapminder_gdp*.csv'):
     dataframe = pd.read_csv(filename)
-    # extract <region> from the filename, expected to be in the format 'data/gapminder_gdp_<region>.csv'.
-    # we will split the string using the split method and `_` as our separator,
-    # retrieve the last string in the list that split returns (`<region>.csv`), 
-    # and then remove the `.csv` extension from that string.
-    # NOTE: the pathlib module covered in the next callout also offers
-    # convenient abstractions for working with filesystem paths and could solve this as well:
+    # Extrahieren Sie <Region> aus dem Dateinamen, der voraussichtlich das Format „data/gapminder_gdp_<Region>.csv” hat.
+    # Wir teilen die Zeichenfolge mit der Split-Methode und „_” als Trennzeichen,
+    # rufen die letzte Zeichenfolge in der Liste ab, die Split zurückgibt („<Region>.csv”), 
+    # und entfernen dann die Erweiterung „.csv” aus dieser Zeichenfolge.
+    # HINWEIS: Das im nächsten Callout behandelte Modul „pathlib” bietet ebenfalls
+    # praktische Abstraktionen für die Arbeit mit Dateisystempfaden und könnte dies ebenfalls lösen:
     # from pathlib import Path
-    # region = Path(filename).stem.split('_')[-1]
+    # region = Path(filename).stem.split(‚_‘)[-1]
     region = filename.split('_')[-1][:-4]
-    # extract the years from the columns of the dataframe 
+    # Extrahieren Sie die Jahreszahlen aus den Spalten des Datenrahmens. 
     headings = dataframe.columns[1:]
     years = headings.str.split('_').str.get(1)
-    # pandas raises errors when it encounters non-numeric columns in a dataframe computation
-    # but we can tell pandas to ignore them with the `numeric_only` parameter
+    # pandas gibt Fehler aus, wenn es bei der Berechnung eines Datenrahmens auf nicht numerische Spalten stößt.
+    # Wir können pandas jedoch mit dem Parameter „numeric_only” anweisen, diese zu ignorieren.
     dataframe.mean(numeric_only=True).plot(ax=ax, label=region)
-    # NOTE: another way of doing this selects just the columns with gdp in their name using the filter method
-    # dataframe.filter(like="gdp").mean().plot(ax=ax, label=region)
-# set the title and labels
+    # HINWEIS: Eine andere Möglichkeit besteht darin, mithilfe der Filtermethode nur die Spalten auszuwählen, deren Name „gdp” enthält.
+    # dataframe.filter(like=„gdp“).mean().plot(ax=ax, label=region)
+# Titel und Beschriftungen festlegen
 ax.set_title('GDP Per Capita for Regions Over Time')
 ax.set_xticks(range(len(years)))
 ax.set_xticklabels(years)
