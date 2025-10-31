@@ -24,8 +24,8 @@ exercises: 10
 - Berechnungen mit hundert Variablen, die `pressure_001`, `pressure_002`, usw. heißen,
   wären mindestens so langsam wie die manuelle Berechnung.
 - Verwenden Sie eine *Liste*, um viele Werte zusammen zu speichern.
-  - Enthält innerhalb eckiger Klammern `[...]`.
-  - Durch Kommata getrennte Werte `,`.
+  - Enthält Werte innerhalb eckiger Klammern `[...]`.
+  - Werte sind durch Kommata `,` getrennt.
 - Verwenden Sie `len`, um herauszufinden, wie viele Werte in einer Liste sind.
 
 ```python
@@ -167,7 +167,7 @@ third character: b
 
 - Die Zeichen in einer Zeichenkette können nicht geändert werden, nachdem sie erstellt
   wurde.
-  - *Immutable*: kann nach der Erstellung nicht mehr geändert werden.
+  - *Immutable (unveränderlich)*: kann nach der Erstellung nicht mehr geändert werden.
   - Im Gegensatz dazu sind Listen *veränderlich*: Sie können an Ort und Stelle geändert
     werden.
 - Python betrachtet die Zeichenkette als einen einzelnen Wert mit Teilen, nicht als eine
