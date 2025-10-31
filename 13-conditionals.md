@@ -219,7 +219,7 @@ von:
 if mass[i] <= 2 or mass[i] >= 5 and velocity[i] > 20:
 ```
 
-schreibe eine von diesen:
+verwenden Sie eine der folgenden Formulierungen:
 
 ```python
 if (mass[i] <= 2 or mass[i] >= 5) and velocity[i] > 20:
