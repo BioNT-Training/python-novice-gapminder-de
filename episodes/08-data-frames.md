@@ -7,11 +7,11 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Wähle einzelne Werte aus einem Pandas-Datenrahmen aus.
-- Wähle ganze Zeilen oder ganze Spalten aus einem Datenrahmen aus.
+- Wähle einzelne Werte aus einem Pandas-DataFrame aus.
+- Wähle ganze Zeilen oder ganze Spalten aus einem DataFrame aus.
 - Wählen Sie in einer einzigen Operation eine Teilmenge von Zeilen und Spalten aus einem
-  Datenrahmen aus.
-- Wählen Sie eine Teilmenge eines Datenrahmens anhand eines einzigen booleschen
+  DataFrame aus.
+- Wählen Sie eine Teilmenge eines DataFrames anhand eines einzigen booleschen
   Kriteriums aus.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -142,7 +142,7 @@ anzeigt.
 ## Das Ergebnis der Zerlegung kann in weiteren Operationen verwendet werden.
 
 - Normalerweise druckt man nicht nur einen Ausschnitt.
-- Alle statistischen Operatoren, die auf ganze Datenrahmen angewendet werden,
+- Alle statistischen Operatoren, die auf ganze DataFrame angewendet werden,
   funktionieren auf die gleiche Weise auf Slices.
 - Berechne z.B. den Maximalwert eines Slice.
 
@@ -171,7 +171,7 @@ dtype: float64
 ## Verwende Vergleiche, um Daten nach ihrem Wert auszuwählen.
 
 - Der Vergleich wird Element für Element durchgeführt.
-- Gibt einen ähnlich geformten Datenrahmen von `True` und `False` zurück.
+- Gibt einen ähnlich geformten DataFrame von `True` und `False` zurück.
 
 ```python
 # Use a subset of data to keep output readable.
@@ -446,9 +446,9 @@ Gehen wir diesen Teil des Codes Zeile für Zeile durch.
 first = pd.read_csv('data/gapminder_all.csv', index_col='country')
 ```
 
-Diese Zeile lädt den Datensatz mit den BIP-Daten aller Länder in einen Datenrahmen mit
+Diese Zeile lädt den Datensatz mit den BIP-Daten aller Länder in einen DataFrame mit
 der Bezeichnung `first`. Der Parameter `index_col='country'` wählt aus, welche Spalte
-als Zeilenbeschriftung im Datenrahmen verwendet werden soll.
+als Zeilenbeschriftung im DataFrame verwendet werden soll.
 
 ```python
 second = first[first['continent'] == 'Americas']
@@ -466,8 +466,8 @@ third = second.drop('Puerto Rico')
 ```
 
 Wie die Syntax vermuten lässt, wird in dieser Zeile die Zeile von `second` mit der
-Bezeichnung "Puerto Rico" gelöscht. Der resultierende Datenrahmen `third` hat eine Zeile
-weniger als der ursprüngliche Datenrahmen `second`.
+Bezeichnung "Puerto Rico" gelöscht. Der resultierende DataFrame `third` hat eine Zeile
+weniger als der ursprüngliche DataFrame `second`.
 
 ```python
 fourth = third.drop('continent', axis = 1)
@@ -640,28 +640,28 @@ data[data.index == "row_name"]
 
 ```python
 # by column/row names
-data["column_name"]["row_name"]         # as a Series
+data["column_name"]["row_name"]         # als Series
 
-data[["col_name"]].loc["row_name"]  # as a Series
-data[["col_name"]].loc[["row_name"]]  # as a DataFrame
+data[["col_name"]].loc["row_name"]  # als Series
+data[["col_name"]].loc[["row_name"]]  # als DataFrame
 
-data.loc["row_name"]["col_name"]  # as a value
-data.loc[["row_name"]]["col_name"]  # as a Series
-data.loc[["row_name"]][["col_name"]]  # as a DataFrame
+data.loc["row_name"]["col_name"]  # als Wert
+data.loc[["row_name"]]["col_name"]  # als Series
+data.loc[["row_name"]][["col_name"]]  # als DataFrame
 
-data.loc["row_name", "col_name"]  # as a value
-data.loc[["row_name"], "col_name"]  # as a Series. Preserves index. Column name is moved to `.name`.
-data.loc["row_name", ["col_name"]]  # as a Series. Index is moved to `.name.` Sets index to column name.
-data.loc[["row_name"], ["col_name"]]  # as a DataFrame (preserves original index and column name)
+data.loc["row_name", "col_name"]  # als Wert
+data.loc[["row_name"], "col_name"]  #  Series. Behält den Index bei. Der Spaltenname wird nach `.name` verschoben.
+data.loc["row_name", ["col_name"]]  # als Series. Der Index wird nach „.name.“ verschoben. Setzt den Index auf den Spaltennamen.
+data.loc[["row_name"], ["col_name"]]  # als DataFrame (behält den ursprünglichen Index und Spaltennamen bei)
 
 # by column/row names: Dot notation
 data.col_name.row_name
 
 # by column/row indices
-data.iloc[row_index, col_index] # as a value
-data.iloc[[row_index], col_index] # as a Series. Preserves index. Column name is moved to `.name`
-data.iloc[row_index, [col_index]] # as a Series. Index is moved to `.name.` Sets index to column name.
-data.iloc[[row_index], [col_index]] # as a DataFrame (preserves original index and column name)
+data.iloc[row_index, col_index] # als Wert
+data.iloc[[row_index], col_index] # #  Series. Behält den Index bei. Der Spaltenname wird nach `.name` verschoben.
+data.iloc[row_index, [col_index]] # als Series. Der Index wird nach „.name.“ verschoben. Setzt den Index auf den Spaltennamen.
+data.iloc[[row_index], [col_index]] #  # als DataFrame (behält den ursprünglichen Index und Spaltennamen bei)
 
 # column name + row index
 data["col_name"][row_index]
@@ -669,8 +669,8 @@ data.col_name[row_index]
 data["col_name"].iloc[row_index]
 
 # column index + row name
-data.iloc[:, [col_index]].loc["row_name"]  # as a Series
-data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
+data.iloc[:, [col_index]].loc["row_name"]  # alsSeries
+data.iloc[:, [col_index]].loc[["row_name"]]  # als DataFrame
 
 # using masks
 data[data.index == "row_name"].T[data.T.index == "col_name"].T
@@ -716,10 +716,10 @@ data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 7\. Zugriff auf eine Teilmenge von Zeilen- und Spaltenbereichen
 
 ```python
-# by name
+# nach Namen
 data.loc["row1":"row2", "col1":"col2"]
 
-# by index
+# nach index
 data.iloc[row1_index:row2_index, col1_index:col2_index]
 
 # column names + row indices
@@ -743,7 +743,7 @@ Methoden mit einer Zeichenkette verwendet. Aber wir können sehen, dass noch vie
 verfügbar sind, wenn wir `dir()` benutzen:
 
 ```python
-my_string = 'Hello world!'   # creation of a string object 
+my_string = 'Hello world!'   # Erstellen eines String-Objekts
 dir(my_string)
 ```
 
