@@ -57,7 +57,7 @@ for number in [2, 3, 5]:
     print(number)
 ```
 
-- Die Sammlung, `[2, 3, 5]`, ist diejenige, auf der die Schleife ausgeführt wird.
+- Die Schleife wird auf der Sammlung `[2, 3, 5]` ausgeführt.
 - Der Körper, `print(number)`, gibt an, was für jeden Wert in der Sammlung zu tun ist.
 - Die Schleifenvariable, `number`, ändert sich bei jeder *Iteration* der Schleife.
   - Das "aktuelle Ding".
@@ -467,9 +467,9 @@ print('My favorite season is ', seasons[3])
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Eine *for-Schleife* führt Befehle einmal für jeden Wert in einer Sammlung aus.
-- Eine `for`-Schleife besteht aus einer Sammlung, einer Schleifenvariablen und einem
+- Eine *for-Schleife*besteht aus einer Sammlung, einer Schleifenvariablen und einem
   Körper.
-- Die erste Zeile der `for`-Schleife muss mit einem Doppelpunkt enden, und der Körper
+- Die erste Zeile der *for-Schleife* muss mit einem Doppelpunkt enden, und der Körper
   muss eingerückt sein.
 - Die Einrückung ist in Python immer sinnvoll.
 - Schleifenvariablen können beliebig benannt werden (es wird jedoch dringend empfohlen,
