@@ -30,7 +30,7 @@ exercises: 10
   um im Code auf die Pandas-Bibliothek zu verweisen.
 - Einlesen einer CSV-Datendatei (Comma Separated Values) mit `pd.read_csv`.
   - Argument ist der Name der zu lesenden Datei.
-  - Gibt einen Datenrahmen zurück, den Sie einer Variablen zuweisen können
+  - Gibt einen DataFrame zurück, den Sie einer Variablen zuweisen können
 
 ```python
 import pandas as pd
@@ -57,13 +57,13 @@ print(data_oceania)
 1     25185.00911
 ```
 
-- Die Spalten in einem Datenrahmen sind die beobachteten Variablen und die Zeilen die
+- Die Spalten in einem DataFrame sind die beobachteten Variablen und die Zeilen die
   Beobachtungen.
 - Pandas verwendet den Backslash `\`, um umbrochene Zeilen anzuzeigen, wenn die Ausgabe
   zu breit ist, um auf den Bildschirm zu passen.
-- Die Verwendung von beschreibenden Namen für Datenrahmen hilft uns, zwischen mehreren
-  Datenrahmen zu unterscheiden, damit wir nicht versehentlich einen Datenrahmen
-  überschreiben oder aus dem falschen Datenrahmen lesen.
+- Die Verwendung von beschreibenden Namen für DataFrame hilft uns, zwischen mehreren
+  DataFrame zu unterscheiden, damit wir nicht versehentlich einen DataFrame
+  überschreiben oder aus dem falschen DataFrame lesen.
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
@@ -86,7 +86,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_ocea
 - Die Zeilenüberschriften sind Zahlen (in diesem Fall 0 und 1).
 - Möchte wirklich nach Ländern indexieren.
 - Übergeben Sie dazu den Namen der Spalte an den Parameter `read_csv` als `index_col`.
-- Die Benennung des Datenrahmens `data_oceania_country` sagt uns, welche Region die
+- Die Benennung des DataFrames `data_oceania_country` sagt uns, welche Region die
   Daten umfassen (`oceania`) und wie sie indiziert sind (`country`).
 
 ```python
@@ -111,7 +111,7 @@ Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 ```
 
-## Verwenden Sie die Methode `DataFrame.info()`, um mehr über einen Datenrahmen herauszufinden.
+## Verwenden Sie die Methode `DataFrame.info()`, um mehr über einen DataFrame herauszufinden.
 
 ```python
 data_oceania_country.info()
@@ -144,7 +144,7 @@ memory usage: 208.0+ bytes
     Beobachtungen verwendet werden.
 - Benötigt 208 Bytes Speicherplatz.
 
-## Die Variable `DataFrame.columns` speichert Informationen über die Spalten des Datenrahmens.
+## Die Variable `DataFrame.columns` speichert Informationen über die Spalten des DataFrames.
 
 - Beachten Sie, dass es sich hierbei um Daten und *nicht* um eine Methode handelt. (Es
   hat keine Klammern.)
@@ -163,7 +163,7 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
       dtype='object')
 ```
 
-## Verwenden Sie `DataFrame.T`, um einen Datenrahmen zu transponieren.
+## Verwenden Sie `DataFrame.T`, um einen DataFrame zu transponieren.
 
 - Manchmal möchte man Spalten als Zeilen behandeln und umgekehrt.
 - Transponieren (geschrieben `.T`) kopiert die Daten nicht, sondern ändert nur die
@@ -413,8 +413,8 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 ## Daten schreiben
 
 Neben der Funktion `read_csv` zum Lesen von Daten aus einer Datei, bietet Pandas eine
-Funktion `to_csv` zum Schreiben von Datenrahmen in Dateien. Wenden Sie an, was Sie über
-das Lesen von Dateien gelernt haben, und schreiben Sie einen Ihrer Datenrahmen in eine
+Funktion `to_csv` zum Schreiben von DataFrame in Dateien. Wenden Sie an, was Sie über
+das Lesen von Dateien gelernt haben, und schreiben Sie einen Ihrer DataFrame in eine
 Datei namens `processed.csv`. Du kannst `help` benutzen, um Informationen darüber zu
 bekommen, wie man `to_csv` benutzt.
 
@@ -453,10 +453,10 @@ aufrufen kann, z.B. `data_americas.to_csv` oder `data_oceania.to_csv`
   Daten zu erhalten.
 - Verwenden Sie `index_col`, um anzugeben, daß die Werte einer Spalte als
   Zeilenüberschriften verwendet werden sollen.
-- Verwenden Sie `DataFrame.info`, um mehr über einen Datenrahmen herauszufinden.
+- Verwenden Sie `DataFrame.info`, um mehr über einen DataFrame herauszufinden.
 - Die Variable `DataFrame.columns` speichert Informationen über die Spalten des
-  Datenrahmens.
-- Verwenden Sie `DataFrame.T`, um einen Datenrahmen zu transponieren.
+  DataFrames.
+- Verwenden Sie `DataFrame.T`, um einen DataFrame zu transponieren.
 - Verwenden Sie `DataFrame.describe`, um zusammenfassende Statistiken über Daten zu
   erhalten.
 
