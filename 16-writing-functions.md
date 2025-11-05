@@ -275,7 +275,7 @@ ergibt diese Ausgabe:
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Verkapselung
+## Einkapselung
 
 Füllen Sie die Leerzeichen aus, um eine Funktion zu erstellen, die einen einzelnen
 Dateinamen als Argument nimmt, die Daten in die durch das Argument benannte Datei lädt
@@ -392,7 +392,7 @@ print_date(day=1, month=2, year=2003)
 
 ::::::::::::::::::::::::::::::::::::::: challenge
 
-## Verkapselung eines If/Print-Blocks
+## Einkapselung eines If/Print-Blocks
 
 Der folgende Code wird auf einem Etikettendrucker für Hühnereier ausgeführt. Eine
 digitale Waage meldet dem Computer die Masse eines Hühnereis (in Gramm) und der Computer
