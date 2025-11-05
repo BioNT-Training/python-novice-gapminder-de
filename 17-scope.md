@@ -21,7 +21,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Der Geltungsbereich einer Variablen ist der Teil eines Programms, der diese Variable 'sehen' kann.
+## Der Geltungsbereich (Englisch: scope) einer Variablen ist der Teil eines Programms, der diese Variable 'sehen' kann.
 
 - Es gibt nur so viele sinnvolle Namen für Variablen.
 - Leute, die Funktionen benutzen, sollten sich nicht darum kümmern müssen, welche
