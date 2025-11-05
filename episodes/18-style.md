@@ -7,7 +7,7 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Begründen Sie die grundlegenden Regeln des Codierungsstils.
+- Begründen Sie die grundlegenden Regeln des Kodierungsstils.
 - Refactor one-page programs to make them more readable and justify the changes.
 - Verwenden Sie die Python Community Coding Standards (PEP-8).
 
@@ -56,7 +56,7 @@ Einige Punkte, die hervorzuheben sind:
   Beispiel leicht abweichende Empfehlungen. Google hat eine Anwendung geschrieben, die
   Ihnen dabei helfen kann, Ihren Code entweder nach ihrem Stil oder nach PEP8 zu
   formatieren: [yapf](https://github.com/google/yapf/).
-- In Bezug auf den Codierungsstil ist der Schlüssel *Konsistenz*. Wählen Sie einen Stil
+- In Bezug auf den Kodierungsstil ist der Schlüssel *Konsistenz*. Wählen Sie einen Stil
   für Ihr Projekt, sei es PEP8, der Google-Stil oder etwas anderes, und tun Sie Ihr
   Bestes, um sicherzustellen, dass Sie und alle anderen, mit denen Sie zusammenarbeiten,
   sich daran halten. Die Konsistenz innerhalb eines Projekts ist oft wichtiger als der
