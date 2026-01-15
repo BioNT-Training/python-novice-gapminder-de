@@ -47,6 +47,16 @@
           </ul></li>
       </div>
 
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+          <b>Deutsch</b>  <i data-feather="chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2"><li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/python-novice-gapminder-en" class="external-link">English</a></button></li>
+          <li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/python-novice-gapminder-es" class="external-link">Español</a></button></li>
+          <li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/python-novice-gapminder-it" class="external-link">Italiano</a></button></li>
+        </ul></div>
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Lernansicht <i data-feather="chevron-down"></i>
@@ -729,7 +739,7 @@ second time: [3, 5]</code></pre>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -767,7 +777,7 @@ ganze Zahlen sind, wie lang ist die Liste
   Lösung
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Die Liste <code>values[start:stop]</code> hat bis zu
 <code>stop - start</code> Elemente. Zum Beispiel hat
@@ -814,7 +824,7 @@ list to string: gold</code></pre>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" class="external-link"><code>list('some string')</code></a>
@@ -865,7 +875,7 @@ Indizierung kombinieren.)</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Das Programm gibt <code>m</code> aus.</p>
 <ol style="list-style-type: decimal"><li>Python interpretiert einen negativen Index so, als würde man vom
@@ -912,7 +922,7 @@ Sammlung auswählen?</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>Das Programm druckt</p>
 <div class="codewrapper sourceCode" id="cb27">
@@ -959,7 +969,7 @@ zweite Element aus).</li>
   Lösung
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">AUSGABE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1011,7 +1021,7 @@ Worten den Unterschied zwischen <code>sorted(letters)</code> und
   Lösung
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Programm A druckt</p>
 <div class="codewrapper">
@@ -1073,7 +1083,7 @@ Worten den Unterschied zwischen <code>new = old</code> und
   Lösung
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Programm A druckt</p>
 <div class="codewrapper">
@@ -1149,15 +1159,17 @@ Fehler.</li>
 	
         | <a href="https://github.com/swcarpentry/python-novice-gapminder/blob/main/CONTRIBUTING.md" class="external-link">Beitragen</a>
         | <a href="https://github.com/swcarpentry/python-novice-gapminder/" class="external-link">Quelle</a></p>
-				<p><a href="https://github.com/swcarpentry/python-novice-gapminder/blob/main/CITATION" class="external-link">Zitieren</a> | <a href="mailto:team@carpentries.org">Kontakt</a> | <a href="https://carpentries.org/about/" class="external-link">Über</a></p>
-			</div>
-			<div class="col-md-6">
+        <p>
+        <a href="https://github.com/swcarpentry/python-novice-gapminder/blob/main/" class="external-link">Zitieren</a>
+        | <a href="mailto:team@carpentries.org">Kontakt</a> | <a href="https://carpentries.org/about/" class="external-link">Über</a></p>
+		</div>
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
-			</div>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.17.3" class="external-link">sandpaper (0.17.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
@@ -1179,7 +1191,7 @@ Fehler.</li>
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/11-lists.html",
   "dateCreated": "2016-01-07",
   "dateModified": "2025-10-31",
-  "datePublished": "2025-11-05"
+  "datePublished": "2026-01-15"
 }
 
   </script><script>
